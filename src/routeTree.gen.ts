@@ -16,16 +16,29 @@ import { Route as rootRoute } from './routes/__root'
 
 // Create Virtual Routes
 
-const AboutLazyImport = createFileRoute('/about')()
+const RoleManagementLazyImport = createFileRoute('/role-management')()
+const PermissionManagementLazyImport = createFileRoute(
+  '/permission-management',
+)()
 const IndexLazyImport = createFileRoute('/')()
 
 // Create/Update Routes
 
-const AboutLazyRoute = AboutLazyImport.update({
-  id: '/about',
-  path: '/about',
+const RoleManagementLazyRoute = RoleManagementLazyImport.update({
+  id: '/role-management',
+  path: '/role-management',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/about.lazy').then((d) => d.Route))
+} as any).lazy(() =>
+  import('./routes/role-management.lazy').then((d) => d.Route),
+)
+
+const PermissionManagementLazyRoute = PermissionManagementLazyImport.update({
+  id: '/permission-management',
+  path: '/permission-management',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() =>
+  import('./routes/permission-management.lazy').then((d) => d.Route),
+)
 
 const IndexLazyRoute = IndexLazyImport.update({
   id: '/',
@@ -44,11 +57,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutLazyImport
+    '/permission-management': {
+      id: '/permission-management'
+      path: '/permission-management'
+      fullPath: '/permission-management'
+      preLoaderRoute: typeof PermissionManagementLazyImport
+      parentRoute: typeof rootRoute
+    }
+    '/role-management': {
+      id: '/role-management'
+      path: '/role-management'
+      fullPath: '/role-management'
+      preLoaderRoute: typeof RoleManagementLazyImport
       parentRoute: typeof rootRoute
     }
   }
@@ -58,37 +78,42 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
-  '/about': typeof AboutLazyRoute
+  '/permission-management': typeof PermissionManagementLazyRoute
+  '/role-management': typeof RoleManagementLazyRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
-  '/about': typeof AboutLazyRoute
+  '/permission-management': typeof PermissionManagementLazyRoute
+  '/role-management': typeof RoleManagementLazyRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexLazyRoute
-  '/about': typeof AboutLazyRoute
+  '/permission-management': typeof PermissionManagementLazyRoute
+  '/role-management': typeof RoleManagementLazyRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
+  fullPaths: '/' | '/permission-management' | '/role-management'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/' | '/about'
+  to: '/' | '/permission-management' | '/role-management'
+  id: '__root__' | '/' | '/permission-management' | '/role-management'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
-  AboutLazyRoute: typeof AboutLazyRoute
+  PermissionManagementLazyRoute: typeof PermissionManagementLazyRoute
+  RoleManagementLazyRoute: typeof RoleManagementLazyRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
-  AboutLazyRoute: AboutLazyRoute,
+  PermissionManagementLazyRoute: PermissionManagementLazyRoute,
+  RoleManagementLazyRoute: RoleManagementLazyRoute,
 }
 
 export const routeTree = rootRoute
@@ -102,14 +127,18 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/about"
+        "/permission-management",
+        "/role-management"
       ]
     },
     "/": {
       "filePath": "index.lazy.tsx"
     },
-    "/about": {
-      "filePath": "about.lazy.tsx"
+    "/permission-management": {
+      "filePath": "permission-management.lazy.tsx"
+    },
+    "/role-management": {
+      "filePath": "role-management.lazy.tsx"
     }
   }
 }

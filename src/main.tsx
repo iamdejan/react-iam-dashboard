@@ -3,8 +3,12 @@ import { createRoot } from "react-dom/client";
 import { routeTree } from "./routeTree.gen";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import "@mantine/core/styles.css";
+import { createTheme, MantineProvider } from "@mantine/core";
 
-const router = createRouter({routeTree});
+const router = createRouter({
+  routeTree,
+  defaultPreload: "intent"
+});
 
 declare module "@tanstack/react-router" {
   interface Register {
@@ -12,12 +16,16 @@ declare module "@tanstack/react-router" {
   }
 }
 
+const theme = createTheme({});
+
 const rootElement = document.getElementById("root");
 if(rootElement !== null && !rootElement.innerHTML) {
   const root = createRoot(rootElement);
   root.render(
     <StrictMode>
-      <RouterProvider router={router} />
+      <MantineProvider theme={theme}>
+        <RouterProvider router={router} />
+      </MantineProvider>
     </StrictMode>
   );
 }
