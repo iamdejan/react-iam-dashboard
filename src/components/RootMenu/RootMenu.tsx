@@ -1,5 +1,5 @@
 import { AppShell, NavLink, Title } from "@mantine/core";
-import { FileRoutesByPath, Outlet } from "@tanstack/react-router";
+import { FileRoutesByPath, Link, Outlet } from "@tanstack/react-router";
 import { JSX, lazy } from "react";
 
 const TanStackRouterDevtools =
@@ -17,10 +17,6 @@ type RouteLink = {
 };
 
 const routeList: RouteLink[] = [
-  {
-    link: "/",
-    title: "Home"
-  },
   {
     link: "/role-management",
     title: "Role Management"
@@ -42,7 +38,11 @@ export default function RootMenu(): JSX.Element {
         <AppShell.Header style={{
           padding: "0.5rem"
         }}>
-          <Title>React IAM Dashboard</Title>
+          <Title>
+            <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
+              React IAM Dashboard
+            </Link>
+          </Title>
         </AppShell.Header>
         <AppShell.Navbar>
           {routeList.map((route) => (
