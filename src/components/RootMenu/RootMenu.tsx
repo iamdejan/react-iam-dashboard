@@ -1,6 +1,7 @@
-import { AppShell, NavLink, Title } from "@mantine/core";
+import { AppShell, Title } from "@mantine/core";
 import { FileRoutesByPath, Link, Outlet } from "@tanstack/react-router";
 import { JSX, lazy } from "react";
+import SidebarLink from "../SidebarLink";
 
 const TanStackRouterDevtools =
   process.env.NODE_ENV === "production"
@@ -46,7 +47,11 @@ export default function RootMenu(): JSX.Element {
         </AppShell.Header>
         <AppShell.Navbar>
           {routeList.map((route) => (
-            <NavLink key={route.link} label={route.title} href={route.link} />
+            <SidebarLink
+              key={route.link}
+              label={route.title}
+              to={route.link}
+            />
           ))}
         </AppShell.Navbar>
         <AppShell.Main>
