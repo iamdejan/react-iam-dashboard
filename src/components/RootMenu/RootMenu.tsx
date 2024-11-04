@@ -1,7 +1,8 @@
-import { AppShell, Title, useMantineTheme } from "@mantine/core";
+import { AppShell, Box, Title, useMantineTheme } from "@mantine/core";
 import { FileRoutesByPath, Link, Outlet } from "@tanstack/react-router";
 import { JSX, lazy } from "react";
 import SidebarLink from "../SidebarLink";
+import { IconUsers, IconBriefcase } from "@tabler/icons-react";
 
 const TanStackRouterDevtools =
   process.env.NODE_ENV === "production"
@@ -14,17 +15,20 @@ const TanStackRouterDevtools =
 
 type RouteLink = {
   link: keyof FileRoutesByPath,
-  title: string
+  title: string,
+  icon?: JSX.Element
 };
 
 const routeList: RouteLink[] = [
   {
     link: "/role-management",
-    title: "Role Management"
+    title: "Role Management",
+    icon: <IconUsers />
   },
   {
     link: "/permission-management",
-    title: "Permission Management"
+    title: "Permission Management",
+    icon: <IconBriefcase />
   }
 ];
 
@@ -38,15 +42,35 @@ export default function RootMenu(): JSX.Element {
         navbar={{ width: 200, breakpoint: "sm" }}
         padding="md"
       >
-        <AppShell.Header style={{
-          padding: "0.5rem",
-          backgroundColor: theme.colors.tosca[6],
-        }}>
-          <Title>
-            <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
-              React IAM Dashboard
-            </Link>
-          </Title>
+        <AppShell.Header
+          style={{
+            padding: "0.5rem",
+            backgroundColor: theme.colors.tosca[6],
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <Box
+            style={{
+              width: "100%",
+              textAlign: "right"
+            }}
+          >
+            <Title
+              order={2}
+            >
+              <Link
+                href="/"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  fontWeight: "normal"
+                }}
+              >
+                React IAM Dashboard
+              </Link>
+            </Title>
+          </Box>
         </AppShell.Header>
         <AppShell.Navbar>
           {routeList.map((route) => (
@@ -54,6 +78,7 @@ export default function RootMenu(): JSX.Element {
               key={route.link}
               label={route.title}
               to={route.link}
+              {...(route.icon ? { leftSection: route.icon } : {})}
             />
           ))}
         </AppShell.Navbar>
