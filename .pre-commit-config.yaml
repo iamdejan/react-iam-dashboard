@@ -1,6 +1,12 @@
 minimum_pre_commit_version: '2'
 fail_fast: true
 repos:
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v3.4.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: [--strict]
   - repo: local
     hooks:
       - id: check-npm-version
@@ -16,7 +22,7 @@ repos:
       - id: install-pnpm
         name: Install pnpm
         language: system
-        entry: npm i -g pnpm@9.12.1
+        entry: npm i -g pnpm@9.12.3
         pass_filenames: false
       - id: install-dependencies
         name: Install dependencies

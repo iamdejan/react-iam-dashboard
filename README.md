@@ -1,9 +1,11 @@
-# React TypeScript Template
+# React IAM Dashboard
 
-This is an opionated React TypeScript template.
+Not are roles are equal. This project aims to create a dashboard for IAM (Identity Access Management), where each user can be assigned to a role, of which it may have one or more permissions.
 
-## Why opionated?
+## Prerequisites
 
-I believe in consistency in syntax. Unfortunately, JavaScript and TypeScript aren't very strict in syntax (e.g. declaring a string with either single or double quotes, optional semi-colon at the end of the statement, etc.).
+### Pre-Commit Hooks
 
-This repo is created so that I don't have to setup ESLint and TanStack Router anymore.
+Install at 2 stages:
+- `commit-msg`: `pre-commit install --hook-type commit-msg`
+- `pre-push`: `pre-commit install --hook-type pre-push`

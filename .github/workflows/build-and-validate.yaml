@@ -11,12 +11,12 @@ jobs:
   pipeline:
     strategy:
       matrix:
-        os: ['ubuntu-20.04', 'ubuntu-22.04', 'ubuntu-24.04']
-        node_version: ['18.20.4', '20.18.0', '22.9.0']
+        os: ['ubuntu-22.04', 'ubuntu-24.04']
+        node_version: ['18.20.4', '20.18.0', '22.11.0']
     runs-on: ${{ matrix.os }}
     steps:
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.1.0
         with:
           node-version: ${{ matrix.node_version }}
           check-latest: false
@@ -25,6 +25,6 @@ jobs:
       - name: Setup Python 3
         uses: actions/setup-python@v5.2.0
         with:
-          python-version: '3.12'
+          python-version: '3.13.0'
       - name: Pre-commit
         uses: pre-commit/action@v3.0.1
