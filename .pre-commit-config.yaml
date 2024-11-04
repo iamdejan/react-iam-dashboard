@@ -1,4 +1,4 @@
-minimum_pre_commit_version: '2'
+minimum_pre_commit_version: "2"
 fail_fast: true
 repos:
   - repo: https://github.com/compilerla/conventional-pre-commit
@@ -39,8 +39,8 @@ repos:
         language: system
         entry: pnpm run lint
         pass_filenames: false
-      - id: build
-        name: Build
+      - id: test
+        name: Test
         language: system
-        entry: pnpm run build
+        entry: pnpm run vitest
         pass_filenames: false

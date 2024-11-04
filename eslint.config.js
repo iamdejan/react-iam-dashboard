@@ -4,6 +4,7 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import stylisticJs from '@stylistic/eslint-plugin-js'
+import vitest from "@vitest/eslint-plugin";
 
 export default tseslint.config(
   { ignores: ['dist'] },
@@ -22,6 +23,7 @@ export default tseslint.config(
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       '@stylistic/js': stylisticJs,
+      'vitest': vitest,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -41,6 +43,7 @@ export default tseslint.config(
       '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
       '@typescript-eslint/explicit-function-return-type': 'error',
       '@typescript-eslint/no-confusing-non-null-assertion': 'error',
+      ...vitest.configs.recommended.rules,
     },
   },
 )
