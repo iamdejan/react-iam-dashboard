@@ -1,4 +1,4 @@
-import { AppShell, Title } from "@mantine/core";
+import { AppShell, Title, useMantineTheme } from "@mantine/core";
 import { FileRoutesByPath, Link, Outlet } from "@tanstack/react-router";
 import { JSX, lazy } from "react";
 import SidebarLink from "../SidebarLink";
@@ -29,6 +29,8 @@ const routeList: RouteLink[] = [
 ];
 
 export default function RootMenu(): JSX.Element {
+  const theme = useMantineTheme();
+
   return (
     <>
       <AppShell
@@ -37,7 +39,8 @@ export default function RootMenu(): JSX.Element {
         padding="md"
       >
         <AppShell.Header style={{
-          padding: "0.5rem"
+          padding: "0.5rem",
+          backgroundColor: theme.colors.tosca[6],
         }}>
           <Title>
             <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
@@ -54,7 +57,11 @@ export default function RootMenu(): JSX.Element {
             />
           ))}
         </AppShell.Navbar>
-        <AppShell.Main>
+        <AppShell.Main
+          style={{
+            backgroundColor: theme.colors.tosca[1]
+          }}
+        >
           <Outlet />
         </AppShell.Main>
       </AppShell>
