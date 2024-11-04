@@ -1,9 +1,9 @@
 import { render } from "../../../test-utils/render";
 import Home from "../Home";
-import { describe, expect, test } from "vitest";
+import { describe, expect, it } from "vitest";
 
 describe("Home", () => {
-  test("should render title", () => {
+  it("should render title", () => {
     const { getByText } = render(<Home />);
 
     const title = getByText("You don't have to worry about Identity Access and Management...");
@@ -12,7 +12,7 @@ describe("Home", () => {
     expect(title.style.fontWeight).toBe("bold");
   });
 
-  test("should render subtitle", () => {
+  it("should render subtitle", () => {
     const { getByText } = render(<Home />);
 
     const subTitle = getByText("Because we take care of it for you!");
