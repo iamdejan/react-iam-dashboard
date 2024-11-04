@@ -13,7 +13,9 @@
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "routes:generate": "tsr generate",
-    "routes:watch": "tsr watch"
+    "routes:watch": "tsr watch",
+    "vitest": "vitest run",
+    "vitest:watch": "vitest"
   },
   "dependencies": {
     "@mantine/core": "^7.13.4",
@@ -29,6 +31,10 @@
     "@tanstack/router-cli": "^1.78.3",
     "@tanstack/router-devtools": "^1.78.3",
     "@tanstack/router-plugin": "^1.78.3",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^22.8.7",
     "@types/react": "^18.3.12",
@@ -38,12 +44,14 @@
     "eslint-plugin-react-hooks": "5.1.0-rc-fb9a90fa48-20240614",
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.11.0",
+    "jsdom": "^25.0.1",
     "postcss": "^8.4.47",
     "postcss-preset-mantine": "^1.17.0",
     "postcss-simple-vars": "^7.0.1",
     "prettier": "3.3.3",
     "typescript": "5.6.3",
     "typescript-eslint": "^8.12.2",
-    "vite": "^5.4.10"
+    "vite": "^5.4.10",
+    "vitest": "^2.1.4"
   }
 }
