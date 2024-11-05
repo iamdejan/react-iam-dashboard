@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { routeTree } from "./routeTree.gen";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import "@mantine/core/styles.css";
+import "mantine-react-table/styles.css";
 import { MantineProvider } from "@mantine/core";
 import theme from "./theme";
 
