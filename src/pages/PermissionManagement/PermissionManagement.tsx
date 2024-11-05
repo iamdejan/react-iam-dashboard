@@ -5,9 +5,9 @@ import { permissionsData } from "../../data/permissions";
 export default function PermissionManagement(): JSX.Element {
   const data: TableData = {
     caption: "List of permissions.",
-    head: ["ID", "Permission"],
+    head: ["ID", "Team", "Permission"],
     body: permissionsData.map((permission) => {
-      return [permission.id, permission.toString()];
+      return [permission.id, permission.team, permission.toString()];
     }),
   };
 
@@ -15,7 +15,7 @@ export default function PermissionManagement(): JSX.Element {
     <Box>
       <Title order={1}>Permission Management</Title>
       <Paper mt="1rem">
-        <Table data={data} highlightOnHover />
+        <Table data={data} highlightOnHover withColumnBorders />
       </Paper>
     </Box>
   );

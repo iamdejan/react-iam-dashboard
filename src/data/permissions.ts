@@ -11,13 +11,13 @@ class Permission {
   constructor(id: string, team: Team, entity: string, action: string, role?: Role) {
     this.id = id;
     this.team = team;
-    this.entity = entity;
-    this.action = action;
+    this.entity = entity.toLowerCase();
+    this.action = action.toLowerCase();
     this.role = role;
   }
 
   public toString(): string {
-    return `${this.team}.${this.entity}.${this.action}`;
+    return `${this.team.toString().toLowerCase()}.${this.entity.toLowerCase()}.${this.action.toLowerCase()}`;
   }
 };
 
