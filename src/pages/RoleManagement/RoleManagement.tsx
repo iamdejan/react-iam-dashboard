@@ -1,4 +1,4 @@
-import { Box, Paper, Title } from "@mantine/core";
+import { Box, Loader, Paper, Title } from "@mantine/core";
 import { JSX } from "react";
 import { MRT_ColumnDef, MRT_Table, useMantineReactTable } from "mantine-react-table";
 import Role from "../../types/Role";
@@ -22,7 +22,6 @@ export default function RoleManagement(): JSX.Element {
     },
   ];
 
-  // const fetchedUsers = data?.data ?? [];
   const fetchedRoles = rolesQuery.data ?? [];
 
   const table = useMantineReactTable({
@@ -44,11 +43,25 @@ export default function RoleManagement(): JSX.Element {
     <Box>
       <Title order={1}>Role Management</Title>
 
-      <Paper mt="1rem">
-        <MRT_Table
-          table={table}
-        />
-      </Paper>
+      {rolesQuery.isLoading &&
+        <Box
+          display="flex"
+          style={{
+            width: "100%",
+            height: "80vh",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <Loader />
+        </Box>
+      }
+
+      {rolesQuery.isFetched &&
+        <Paper mt="1rem">
+          <MRT_Table table={table} />
+        </Paper>
+      }
     </Box>
   );
 }
