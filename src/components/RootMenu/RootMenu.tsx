@@ -3,6 +3,7 @@ import { FileRoutesByPath, Link, Outlet } from "@tanstack/react-router";
 import { JSX, lazy } from "react";
 import SidebarLink from "../SidebarLink";
 import { IconUsers, IconBriefcase } from "@tabler/icons-react";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const TanStackRouterDevtools =
   process.env.NODE_ENV === "production"
@@ -91,6 +92,7 @@ export default function RootMenu(): JSX.Element {
         </AppShell.Main>
       </AppShell>
       <TanStackRouterDevtools />
+      <ReactQueryDevtools />
     </>
   );
 }

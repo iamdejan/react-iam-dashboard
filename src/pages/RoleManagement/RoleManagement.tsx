@@ -1,9 +1,12 @@
 import { Box, Paper, Title } from "@mantine/core";
 import { JSX } from "react";
-import { Role, rolesData } from "../../data/roles";
 import { MRT_ColumnDef, MRT_Table, useMantineReactTable } from "mantine-react-table";
+import Role from "../../types/Role";
+import { useRoles } from "../../services/queries";
 
 export default function RoleManagement(): JSX.Element {
+  const rolesQuery = useRoles();
+
   const columns: Array<MRT_ColumnDef<Role>> = [
     {
       accessorKey: "id",
@@ -19,9 +22,12 @@ export default function RoleManagement(): JSX.Element {
     },
   ];
 
+  // const fetchedUsers = data?.data ?? [];
+  const fetchedRoles = rolesQuery.data ?? [];
+
   const table = useMantineReactTable({
     columns,
-    data: rolesData,
+    data: fetchedRoles,
     enableColumnActions: false,
     enableColumnFilters: false,
     enablePagination: false,
