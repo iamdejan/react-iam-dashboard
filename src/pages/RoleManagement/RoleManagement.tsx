@@ -45,10 +45,8 @@ export default function RoleManagement(): JSX.Element {
     },
   });
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
   const { onSubmit, key, getInputProps } = useForm<CreateRole>({
     mode: "uncontrolled",
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     validate: zodResolver(CreateRoleSchema),
   });
 
@@ -76,8 +74,7 @@ export default function RoleManagement(): JSX.Element {
         <form
           style={{
             width: "60%"
-          }}
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+          }} 
           onSubmit={onSubmit(handleCreateRole)}
         >
           <Title order={3} mb="1rem">Create Role</Title>
@@ -85,18 +82,16 @@ export default function RoleManagement(): JSX.Element {
             label="Team"
             placeholder="Team"
             data={Object.keys(Team)}
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+             
             key={key("team")}
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+             
             {...getInputProps("team")}
           />
           <TextInput
             label="Job Role"
             placeholder="Job Role"
             name="role"
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
             key={key("role")}
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
             {...getInputProps("role")}
           />
 
@@ -116,7 +111,7 @@ export default function RoleManagement(): JSX.Element {
             justifyContent: "center"
           }}
         >
-          <Loader />
+          <Loader id="loader" />
         </Box>
       }
 
