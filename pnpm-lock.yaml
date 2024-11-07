@@ -11,21 +11,51 @@ importers:
       '@mantine/core':
         specifier: ^7.13.4
         version: 7.13.4(@mantine/hooks@7.13.4(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@mantine/dates':
+        specifier: ^7.13.4
+        version: 7.13.4(@mantine/core@7.13.4(@mantine/hooks@7.13.4(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.13.4(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@mantine/form':
+        specifier: ^7.13.4
+        version: 7.13.4(react@18.3.1)
       '@mantine/hooks':
         specifier: ^7.13.4
         version: 7.13.4(react@18.3.1)
       '@tabler/icons-react':
         specifier: ^3.21.0
         version: 3.21.0(react@18.3.1)
+      '@tanstack/react-query':
+        specifier: ^5.59.19
+        version: 5.59.19(react@18.3.1)
+      '@tanstack/react-query-devtools':
+        specifier: ^5.59.19
+        version: 5.59.19(@tanstack/react-query@5.59.19(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router':
         specifier: ^1.78.3
         version: 1.78.3(@tanstack/router-generator@1.78.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      dayjs:
+        specifier: ^1.11.13
+        version: 1.11.13
+      mantine-form-zod-resolver:
+        specifier: ^1.1.0
+        version: 1.1.0(@mantine/form@7.13.4(react@18.3.1))(zod@3.23.8)
+      mantine-react-table:
+        specifier: 2.0.0-beta.7
+        version: 2.0.0-beta.7(@mantine/core@7.13.4(@mantine/hooks@7.13.4(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/dates@7.13.4(@mantine/core@7.13.4(@mantine/hooks@7.13.4(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.13.4(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.13.4(react@18.3.1))(@tabler/icons-react@3.21.0(react@18.3.1))(clsx@2.1.1)(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: ^18.3.1
         version: 18.3.1
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
+      ulid:
+        specifier: ^2.3.0
+        version: 2.3.0
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@eslint/js':
         specifier: ^9.14.0
@@ -71,7 +101,10 @@ importers:
         version: 3.7.1(vite@5.4.10(@types/node@22.8.7)(sugarss@4.0.1(postcss@8.4.47)))
       '@vitest/eslint-plugin':
         specifier: ^1.1.7
-        version: 1.1.7(@typescript-eslint/utils@8.12.2(eslint@9.14.0)(typescript@5.6.3))(eslint@9.14.0)(typescript@5.6.3)(vitest@2.1.4(@types/node@22.8.7)(jsdom@25.0.1)(sugarss@4.0.1(postcss@8.4.47)))
+        version: 1.1.7(@typescript-eslint/utils@8.12.2(eslint@9.14.0)(typescript@5.6.3))(eslint@9.14.0)(typescript@5.6.3)(vitest@2.1.4)
+      '@vitest/ui':
+        specifier: ^2.1.4
+        version: 2.1.4(vitest@2.1.4)
       eslint:
         specifier: ^9.14.0
         version: 9.14.0
@@ -110,7 +143,7 @@ importers:
         version: 5.4.10(@types/node@22.8.7)(sugarss@4.0.1(postcss@8.4.47))
       vitest:
         specifier: ^2.1.4
-        version: 2.1.4(@types/node@22.8.7)(jsdom@25.0.1)(sugarss@4.0.1(postcss@8.4.47))
+        version: 2.1.4(@types/node@22.8.7)(@vitest/ui@2.1.4)(jsdom@25.0.1)(sugarss@4.0.1(postcss@8.4.47))
 
 packages:
 
@@ -586,6 +619,20 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
+  '@mantine/dates@7.13.4':
+    resolution: {integrity: sha512-1wmFmng8QBNU3JUoxCva357CD4kX/y9wTQoxfv8giYMzC6bNY3tYWW0CYLtSr80ZroMyZOdyXCBIlYYVil8BUQ==}
+    peerDependencies:
+      '@mantine/core': 7.13.4
+      '@mantine/hooks': 7.13.4
+      dayjs: '>=1.0.0'
+      react: ^18.2.0
+      react-dom: ^18.2.0
+
+  '@mantine/form@7.13.4':
+    resolution: {integrity: sha512-JzgUzzCpTmXeRxYs6iXM8fq7vOESrPC0Jk9nEgxu/5DO84Ah7ExthinTt4QiXityznXOOLl5U0BgG0j3aXEuew==}
+    peerDependencies:
+      react: ^18.2.0
+
   '@mantine/hooks@7.13.4':
     resolution: {integrity: sha512-B2QCegQyWlLdenVNaLNK8H9cTAjLW9JKJ3xWg+ShhpjZDHT2hjZz4L0Nt071Z7mPvyAaOwKGM0FyqTcTjdECfg==}
     peerDependencies:
@@ -602,6 +649,9 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
+
+  '@polka/url@1.0.0-next.28':
+    resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
 
   '@rollup/rollup-android-arm-eabi@4.24.3':
     resolution: {integrity: sha512-ufb2CH2KfBWPJok95frEZZ82LtDl0A6QKTa8MoM+cWwDZvVGl5/jNb79pIhRvAalUu+7LD91VYR0nwRD799HkQ==}
@@ -786,6 +836,27 @@ packages:
     resolution: {integrity: sha512-2CqERleeqO3hkhJmyJm37tiL3LYgeOpmo8szqdjgtnnG0z7ZpvzkZz6HkfOr9Ca/ha7mhAiouSvLYuLkM37AMg==}
     engines: {node: '>=12'}
 
+  '@tanstack/match-sorter-utils@8.19.4':
+    resolution: {integrity: sha512-Wo1iKt2b9OT7d+YGhvEPD3DXvPv2etTusIMhMUoG7fbhmxcXCtIjJDEygy91Y2JFlwGyjqiBPRozme7UD8hoqg==}
+    engines: {node: '>=12'}
+
+  '@tanstack/query-core@5.59.17':
+    resolution: {integrity: sha512-jWdDiif8kaqnRGHNXAa9CnudtxY5v9DUxXhodgqX2Rwzj+1UwStDHEbBd9IA5C7VYAaJ2s+BxFR6PUBs8ERorA==}
+
+  '@tanstack/query-devtools@5.59.19':
+    resolution: {integrity: sha512-Gw+3zsADpqiYgx/6MMr9bP1+x2LR8vOuGjo5Un/89qwwP3z7WAHPWFagLFDYkLq68NX7ekUpW/EOYlUMugMXGA==}
+
+  '@tanstack/react-query-devtools@5.59.19':
+    resolution: {integrity: sha512-mYFWTHLtJr2HdyYPZPzzvQ2ksCsSL6L04fCtusPFD3waskXrtmvWvyuDIGeEGdVAYS0Urwxw/0sYvcTVQZH+zQ==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.59.19
+      react: ^18 || ^19
+
+  '@tanstack/react-query@5.59.19':
+    resolution: {integrity: sha512-xLRfyFyQOFcLltKCds0LijfC6/HQJrrTTnZB8ciyn74LIkVAm++vZJ6eUVG20RmJtdP8REdy7vSOYW4M3//XLA==}
+    peerDependencies:
+      react: ^18 || ^19
+
   '@tanstack/react-router@1.78.3':
     resolution: {integrity: sha512-e4Mws3QTLDs++EyP3HwYKz+yZP3LyO5LonqEXngHYM8UjF2lvn6BnNR4vCmFNZfMFXpafR7jHSh7VOdBwnCngA==}
     engines: {node: '>=12'}
@@ -802,6 +873,19 @@ packages:
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
+
+  '@tanstack/react-table@8.20.5':
+    resolution: {integrity: sha512-WEHopKw3znbUZ61s9i0+i9g8drmDo6asTWbrQh8Us63DAk/M0FkmIqERew6P71HI75ksZ2Pxyuf4vvKh9rAkiA==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+
+  '@tanstack/react-virtual@3.10.8':
+    resolution: {integrity: sha512-VbzbVGSsZlQktyLrP5nxE+vE1ZR+U0NFAWPbJLoG2+DKPwd2D7dVICTVIIaYlJqX1ZCEnYDbaOpmMwbsyhBoIA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
 
   '@tanstack/router-cli@1.78.3':
     resolution: {integrity: sha512-rLG3s3PtXKNh4hJMWec0vFy9NtJIRZM9y6wBgT06TOego9K/I6LynL17Ysuz9Ay0SYeTuMkRZqvi8c54MgQzNw==}
@@ -837,6 +921,13 @@ packages:
 
   '@tanstack/store@0.5.5':
     resolution: {integrity: sha512-EOSrgdDAJExbvRZEQ/Xhh9iZchXpMN+ga1Bnk8Nmygzs8TfiE6hbzThF+Pr2G19uHL6+DTDTHhJ8VQiOd7l4tA==}
+
+  '@tanstack/table-core@8.20.5':
+    resolution: {integrity: sha512-P9dF7XbibHph2PFRz8gfBKEXEY/HJPOhym8CHmjF8y3q5mWpKx9xtZapXQUWCgkqvsK0R46Azuz+VaxD4Xl+Tg==}
+    engines: {node: '>=12'}
+
+  '@tanstack/virtual-core@3.10.8':
+    resolution: {integrity: sha512-PBu00mtt95jbKFi6Llk9aik8bnR3tR/oQP1o3TSi+iG//+Q2RTIzCEgKkHG8BB86kxMNW6O8wku+Lmi+QFR6jA==}
 
   '@tanstack/virtual-file-routes@1.64.0':
     resolution: {integrity: sha512-soW+gE9QTmMaqXM17r7y1p8NiQVIIECjdTaYla8BKL5Flj030m3KuxEQoiG1XgjtA0O7ayznFz2YvPcXIy3qDg==}
@@ -1011,6 +1102,11 @@ packages:
   '@vitest/spy@2.1.4':
     resolution: {integrity: sha512-4JOxa+UAizJgpZfaCPKK2smq9d8mmjZVPMt2kOsg/R8QkoRzydHH1qHxIYNvr1zlEaFj4SXiaaJWxq/LPLKaLg==}
 
+  '@vitest/ui@2.1.4':
+    resolution: {integrity: sha512-Zd9e5oU063c+j9N9XzGJagCLNvG71x/2tOme3Js4JEZKX55zsgxhJwUgLI8hkN6NjMLpdJO8d7nVUUuPGAA58Q==}
+    peerDependencies:
+      vitest: 2.1.4
+
   '@vitest/utils@2.1.4':
     resolution: {integrity: sha512-MXDnZn0Awl2S86PSNIim5PWXgIAx8CIkzu35mBdSApUip6RFOGXBCf3YFyeEu8n1IHk4bWD46DeYFu9mQlFIRg==}
 
@@ -1172,6 +1268,9 @@ packages:
     resolution: {integrity: sha512-ZYP5VBHshaDAiVZxjbRVcFJpc+4xGgT0bK3vzy1HLN8jTO975HEbuYzZJcHoQEY5K1a0z8YayJkyVETa08eNTg==}
     engines: {node: '>=18'}
 
+  dayjs@1.11.13:
+    resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
+
   debug@4.3.7:
     resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
     engines: {node: '>=6.0'}
@@ -1311,6 +1410,17 @@ packages:
 
   fastq@1.17.1:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
+
+  fdir@6.4.2:
+    resolution: {integrity: sha512-KnhMXsKSPZlAhp7+IjUkRZKPb4fUyccpDrdFXbi4QL1qkmFh9kVY09Yox+n4MaOb3lHZ1Tv829C3oaaXoMYPDQ==}
+    peerDependencies:
+      picomatch: ^3 || ^4
+    peerDependenciesMeta:
+      picomatch:
+        optional: true
+
+  fflate@0.8.2:
+    resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
 
   file-entry-cache@8.0.0:
     resolution: {integrity: sha512-XXTUwCvisa5oacNGRP9SfNtYBNAMi+RPwBFmblZEF7N7swHYQS6/Zfk7SRwx4D5j3CH211YNRco1DEMNVfZCnQ==}
@@ -1486,6 +1596,10 @@ packages:
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
+  klona@2.0.6:
+    resolution: {integrity: sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==}
+    engines: {node: '>= 8'}
+
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
@@ -1517,6 +1631,26 @@ packages:
   magic-string@0.30.12:
     resolution: {integrity: sha512-Ea8I3sQMVXr8JhN4z+H/d8zwo+tYDgHE9+5G4Wnrwhs0gaK9fXTKx0Tw5Xwsd/bCPTTZNRAdpyzvoeORe9LYpw==}
 
+  mantine-form-zod-resolver@1.1.0:
+    resolution: {integrity: sha512-hidTuYq6agSF5XbkcVVcr0mkGs9ki/x8OC9ldZMxGLVGja6bdl+x4k1hCNrigCG90DBoMDnu0bo3hprGBBlUZA==}
+    engines: {node: '>=16.6.0'}
+    peerDependencies:
+      '@mantine/form': '>=7.0.0'
+      zod: '>=3.0.0'
+
+  mantine-react-table@2.0.0-beta.7:
+    resolution: {integrity: sha512-jpM3hXLL+DHURmm1AJ2uOyxu3xiZvlzS7NOtDh5qHo2AIv9zEEkXK/mrvKmRvXJ0O8pVPHLuYKAel9RBY5NfUA==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      '@mantine/core': ^7.9
+      '@mantine/dates': ^7.9
+      '@mantine/hooks': ^7.9
+      '@tabler/icons-react': '>=2.23.0'
+      clsx: '>=2'
+      dayjs: '>=1.11'
+      react: '>=18.0'
+      react-dom: '>=18.0'
+
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
@@ -1543,6 +1677,10 @@ packages:
   minimatch@9.0.5:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==}
     engines: {node: '>=16 || 14 >=14.17'}
+
+  mrmime@2.0.0:
+    resolution: {integrity: sha512-eu38+hdgojoyq63s+yTpN4XMBdt5l8HhMhc4VKLO9KM5caLIBvUm4thi7fFaxyTmCKeNnXZ5pAlBwCUnhA09uw==}
+    engines: {node: '>=10'}
 
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
@@ -1605,6 +1743,10 @@ packages:
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
+
+  picomatch@4.0.2:
+    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
+    engines: {node: '>=12'}
 
   postcss-js@4.0.1:
     resolution: {integrity: sha512-dDLF8pEO191hJMtlHFPRa8xsizHaM82MLfNkUHdUtVEV3tgTp5oj+8qbEqYM57SLfc74KSbw//4SeJma2LRVIw==}
@@ -1728,6 +1870,9 @@ packages:
   regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
 
+  remove-accents@0.5.0:
+    resolution: {integrity: sha512-8g3/Otx1eJaVD12e31UbJj1YzdtVvzH85HV7t+9MJYk/u3XmkOUJ5Ys9wQrf9PCPK8+xn4ymzqYCiZl6QWKn+A==}
+
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
@@ -1783,6 +1928,10 @@ packages:
 
   siginfo@2.0.0:
     resolution: {integrity: sha512-ybx0WO1/8bSBLEWXZvEd7gMW3Sn3JFlW3TvX1nREbDLRNQNaeNN8WK0meBwPdAaOI7TtRRRJn/Es1zhrrCHu7g==}
+
+  sirv@3.0.0:
+    resolution: {integrity: sha512-BPwJGUeDaDCHihkORDchNyyTvWFhcusy1XMmhEVTQTwGeybFbp8YEmB+njbPnth1FibULBSBVwCQni25XlCUDg==}
+    engines: {node: '>=18'}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -1841,6 +1990,10 @@ packages:
   tinyexec@0.3.1:
     resolution: {integrity: sha512-WiCJLEECkO18gwqIp6+hJg0//p23HXp4S+gGtAKu3mI2F2/sXC4FvHvXvB0zJVVaTPhx1/tOwdbRsa1sOBIKqQ==}
 
+  tinyglobby@0.2.10:
+    resolution: {integrity: sha512-Zc+8eJlFMvgatPZTl6A9L/yht8QqdmUNtURHaKZLmKBE12hNPSrqNkUp2cs3M/UKmNVVAMFQYSjYIVHDjW5zew==}
+    engines: {node: '>=12.0.0'}
+
   tinypool@1.0.1:
     resolution: {integrity: sha512-URZYihUbRPcGv95En+sz6MfghfIc2OJ1sv/RmhWZLouPY0/8Vo80viwPvg3dlaS9fuq7fQMEfgRRK7BBZThBEA==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -1863,6 +2016,10 @@ packages:
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
+
+  totalist@3.0.1:
+    resolution: {integrity: sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==}
+    engines: {node: '>=6'}
 
   tough-cookie@5.0.0:
     resolution: {integrity: sha512-FRKsF7cz96xIIeMZ82ehjC3xW2E+O2+v11udrDYewUbszngYhsGa8z6YUMMzO9QJZzzyd0nGGXnML/TReX6W8Q==}
@@ -1906,6 +2063,10 @@ packages:
   typescript@5.6.3:
     resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
     engines: {node: '>=14.17'}
+    hasBin: true
+
+  ulid@2.3.0:
+    resolution: {integrity: sha512-keqHubrlpvT6G2wH0OEfSW4mquYRcbe/J8NMmveoQOjUqmo+hXtO+ORCpWhdbZ7k72UtY61BL7haGxW6enBnjw==}
     hasBin: true
 
   undici-types@6.19.8:
@@ -2495,6 +2656,21 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
+  '@mantine/dates@7.13.4(@mantine/core@7.13.4(@mantine/hooks@7.13.4(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.13.4(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@mantine/core': 7.13.4(@mantine/hooks@7.13.4(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@mantine/hooks': 7.13.4(react@18.3.1)
+      clsx: 2.1.1
+      dayjs: 1.11.13
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@mantine/form@7.13.4(react@18.3.1)':
+    dependencies:
+      fast-deep-equal: 3.1.3
+      klona: 2.0.6
+      react: 18.3.1
+
   '@mantine/hooks@7.13.4(react@18.3.1)':
     dependencies:
       react: 18.3.1
@@ -2510,6 +2686,8 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
+
+  '@polka/url@1.0.0-next.28': {}
 
   '@rollup/rollup-android-arm-eabi@4.24.3':
     optional: true
@@ -2632,6 +2810,25 @@ snapshots:
 
   '@tanstack/history@1.61.1': {}
 
+  '@tanstack/match-sorter-utils@8.19.4':
+    dependencies:
+      remove-accents: 0.5.0
+
+  '@tanstack/query-core@5.59.17': {}
+
+  '@tanstack/query-devtools@5.59.19': {}
+
+  '@tanstack/react-query-devtools@5.59.19(@tanstack/react-query@5.59.19(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/query-devtools': 5.59.19
+      '@tanstack/react-query': 5.59.19(react@18.3.1)
+      react: 18.3.1
+
+  '@tanstack/react-query@5.59.19(react@18.3.1)':
+    dependencies:
+      '@tanstack/query-core': 5.59.17
+      react: 18.3.1
+
   '@tanstack/react-router@1.78.3(@tanstack/router-generator@1.78.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/history': 1.61.1
@@ -2649,6 +2846,18 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       use-sync-external-store: 1.2.2(react@18.3.1)
+
+  '@tanstack/react-table@8.20.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/table-core': 8.20.5
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@tanstack/react-virtual@3.10.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/virtual-core': 3.10.8
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@tanstack/router-cli@1.78.3':
     dependencies:
@@ -2700,6 +2909,10 @@ snapshots:
       - webpack-sources
 
   '@tanstack/store@0.5.5': {}
+
+  '@tanstack/table-core@8.20.5': {}
+
+  '@tanstack/virtual-core@3.10.8': {}
 
   '@tanstack/virtual-file-routes@1.64.0': {}
 
@@ -2877,13 +3090,13 @@ snapshots:
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@vitest/eslint-plugin@1.1.7(@typescript-eslint/utils@8.12.2(eslint@9.14.0)(typescript@5.6.3))(eslint@9.14.0)(typescript@5.6.3)(vitest@2.1.4(@types/node@22.8.7)(jsdom@25.0.1)(sugarss@4.0.1(postcss@8.4.47)))':
+  '@vitest/eslint-plugin@1.1.7(@typescript-eslint/utils@8.12.2(eslint@9.14.0)(typescript@5.6.3))(eslint@9.14.0)(typescript@5.6.3)(vitest@2.1.4)':
     dependencies:
       '@typescript-eslint/utils': 8.12.2(eslint@9.14.0)(typescript@5.6.3)
       eslint: 9.14.0
     optionalDependencies:
       typescript: 5.6.3
-      vitest: 2.1.4(@types/node@22.8.7)(jsdom@25.0.1)(sugarss@4.0.1(postcss@8.4.47))
+      vitest: 2.1.4(@types/node@22.8.7)(@vitest/ui@2.1.4)(jsdom@25.0.1)(sugarss@4.0.1(postcss@8.4.47))
 
   '@vitest/expect@2.1.4':
     dependencies:
@@ -2918,6 +3131,17 @@ snapshots:
   '@vitest/spy@2.1.4':
     dependencies:
       tinyspy: 3.0.2
+
+  '@vitest/ui@2.1.4(vitest@2.1.4)':
+    dependencies:
+      '@vitest/utils': 2.1.4
+      fflate: 0.8.2
+      flatted: 3.3.1
+      pathe: 1.1.2
+      sirv: 3.0.0
+      tinyglobby: 0.2.10
+      tinyrainbow: 1.2.0
+      vitest: 2.1.4(@types/node@22.8.7)(@vitest/ui@2.1.4)(jsdom@25.0.1)(sugarss@4.0.1(postcss@8.4.47))
 
   '@vitest/utils@2.1.4':
     dependencies:
@@ -3084,6 +3308,8 @@ snapshots:
     dependencies:
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.0.0
+
+  dayjs@1.11.13: {}
 
   debug@4.3.7:
     dependencies:
@@ -3267,6 +3493,12 @@ snapshots:
     dependencies:
       reusify: 1.0.4
 
+  fdir@6.4.2(picomatch@4.0.2):
+    optionalDependencies:
+      picomatch: 4.0.2
+
+  fflate@0.8.2: {}
+
   file-entry-cache@8.0.0:
     dependencies:
       flat-cache: 4.0.1
@@ -3431,6 +3663,8 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
+  klona@2.0.6: {}
+
   levn@0.4.1:
     dependencies:
       prelude-ls: 1.2.1
@@ -3460,6 +3694,25 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
 
+  mantine-form-zod-resolver@1.1.0(@mantine/form@7.13.4(react@18.3.1))(zod@3.23.8):
+    dependencies:
+      '@mantine/form': 7.13.4(react@18.3.1)
+      zod: 3.23.8
+
+  mantine-react-table@2.0.0-beta.7(@mantine/core@7.13.4(@mantine/hooks@7.13.4(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/dates@7.13.4(@mantine/core@7.13.4(@mantine/hooks@7.13.4(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.13.4(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.13.4(react@18.3.1))(@tabler/icons-react@3.21.0(react@18.3.1))(clsx@2.1.1)(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@mantine/core': 7.13.4(@mantine/hooks@7.13.4(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@mantine/dates': 7.13.4(@mantine/core@7.13.4(@mantine/hooks@7.13.4(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.13.4(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@mantine/hooks': 7.13.4(react@18.3.1)
+      '@tabler/icons-react': 3.21.0(react@18.3.1)
+      '@tanstack/match-sorter-utils': 8.19.4
+      '@tanstack/react-table': 8.20.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-virtual': 3.10.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      clsx: 2.1.1
+      dayjs: 1.11.13
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   merge2@1.4.1: {}
 
   micromatch@4.0.8:
@@ -3482,6 +3735,8 @@ snapshots:
   minimatch@9.0.5:
     dependencies:
       brace-expansion: 2.0.1
+
+  mrmime@2.0.0: {}
 
   ms@2.1.3: {}
 
@@ -3531,6 +3786,8 @@ snapshots:
   picocolors@1.1.1: {}
 
   picomatch@2.3.1: {}
+
+  picomatch@4.0.2: {}
 
   postcss-js@4.0.1(postcss@8.4.47):
     dependencies:
@@ -3650,6 +3907,8 @@ snapshots:
 
   regenerator-runtime@0.14.1: {}
 
+  remove-accents@0.5.0: {}
+
   require-directory@2.1.1: {}
 
   resolve-from@4.0.0: {}
@@ -3710,6 +3969,12 @@ snapshots:
 
   siginfo@2.0.0: {}
 
+  sirv@3.0.0:
+    dependencies:
+      '@polka/url': 1.0.0-next.28
+      mrmime: 2.0.0
+      totalist: 3.0.1
+
   source-map-js@1.2.1: {}
 
   stackback@0.0.2: {}
@@ -3754,6 +4019,11 @@ snapshots:
 
   tinyexec@0.3.1: {}
 
+  tinyglobby@0.2.10:
+    dependencies:
+      fdir: 6.4.2(picomatch@4.0.2)
+      picomatch: 4.0.2
+
   tinypool@1.0.1: {}
 
   tinyrainbow@1.2.0: {}
@@ -3769,6 +4039,8 @@ snapshots:
   to-regex-range@5.0.1:
     dependencies:
       is-number: 7.0.0
+
+  totalist@3.0.1: {}
 
   tough-cookie@5.0.0:
     dependencies:
@@ -3809,6 +4081,8 @@ snapshots:
       - supports-color
 
   typescript@5.6.3: {}
+
+  ulid@2.3.0: {}
 
   undici-types@6.19.8: {}
 
@@ -3892,7 +4166,7 @@ snapshots:
       fsevents: 2.3.3
       sugarss: 4.0.1(postcss@8.4.47)
 
-  vitest@2.1.4(@types/node@22.8.7)(jsdom@25.0.1)(sugarss@4.0.1(postcss@8.4.47)):
+  vitest@2.1.4(@types/node@22.8.7)(@vitest/ui@2.1.4)(jsdom@25.0.1)(sugarss@4.0.1(postcss@8.4.47)):
     dependencies:
       '@vitest/expect': 2.1.4
       '@vitest/mocker': 2.1.4(vite@5.4.10(@types/node@22.8.7)(sugarss@4.0.1(postcss@8.4.47)))
@@ -3916,6 +4190,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.8.7
+      '@vitest/ui': 2.1.4(vitest@2.1.4)
       jsdom: 25.0.1
     transitivePeerDependencies:
       - less
