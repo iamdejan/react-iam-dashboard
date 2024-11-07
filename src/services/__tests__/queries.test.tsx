@@ -15,6 +15,5 @@ describe("useRoles", () => {
     await waitFor(() => expect(result.current.isSuccess).toBe(true), { timeout: 2000, interval: 200 });
     expect(result.current.data).not.toBeNull();
     expect(result.current.data).not.toBeUndefined();
-    console.log(result.current.data);
   });
 });
