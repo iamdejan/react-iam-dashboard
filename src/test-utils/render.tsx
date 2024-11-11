@@ -16,8 +16,8 @@ export function render(ui: React.ReactNode): RenderResult {
 
 export function renderWithQueryClient(
   queryClient: QueryClient
-): ({children}: PropsWithChildren<object>) => JSX.Element {
-  return function wrapper({children}: PropsWithChildren<object>) {
+): ({ children }: PropsWithChildren<object>) => JSX.Element {
+  return function wrapper({ children }: PropsWithChildren<object>) {
     return (
       <QueryClientProvider client={queryClient}>
         {children}
