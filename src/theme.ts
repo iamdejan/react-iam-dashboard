@@ -1,4 +1,4 @@
-import { createTheme, MantineColorsTuple } from "@mantine/core";
+import { MantineColorsTuple, createTheme } from "@mantine/core";
 
 const tosca: MantineColorsTuple = [
   "#e5fcf8",

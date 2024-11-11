@@ -21,6 +21,7 @@ const PermissionManagementLazyImport = createFileRoute(
   '/permission-management',
 )()
 const IndexLazyImport = createFileRoute('/')()
+const RolesIdLazyImport = createFileRoute('/roles/$id')()
 
 // Create/Update Routes
 
@@ -45,6 +46,12 @@ const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+
+const RolesIdLazyRoute = RolesIdLazyImport.update({
+  id: '/roles/$id',
+  path: '/roles/$id',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/roles/$id.lazy').then((d) => d.Route))
 
 // Populate the FileRoutesByPath interface
 
@@ -71,6 +78,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RoleManagementLazyImport
       parentRoute: typeof rootRoute
     }
+    '/roles/$id': {
+      id: '/roles/$id'
+      path: '/roles/$id'
+      fullPath: '/roles/$id'
+      preLoaderRoute: typeof RolesIdLazyImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -80,12 +94,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
   '/permission-management': typeof PermissionManagementLazyRoute
   '/role-management': typeof RoleManagementLazyRoute
+  '/roles/$id': typeof RolesIdLazyRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
   '/permission-management': typeof PermissionManagementLazyRoute
   '/role-management': typeof RoleManagementLazyRoute
+  '/roles/$id': typeof RolesIdLazyRoute
 }
 
 export interface FileRoutesById {
@@ -93,14 +109,20 @@ export interface FileRoutesById {
   '/': typeof IndexLazyRoute
   '/permission-management': typeof PermissionManagementLazyRoute
   '/role-management': typeof RoleManagementLazyRoute
+  '/roles/$id': typeof RolesIdLazyRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/permission-management' | '/role-management'
+  fullPaths: '/' | '/permission-management' | '/role-management' | '/roles/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/permission-management' | '/role-management'
-  id: '__root__' | '/' | '/permission-management' | '/role-management'
+  to: '/' | '/permission-management' | '/role-management' | '/roles/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/permission-management'
+    | '/role-management'
+    | '/roles/$id'
   fileRoutesById: FileRoutesById
 }
 
@@ -108,12 +130,14 @@ export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
   PermissionManagementLazyRoute: typeof PermissionManagementLazyRoute
   RoleManagementLazyRoute: typeof RoleManagementLazyRoute
+  RolesIdLazyRoute: typeof RolesIdLazyRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
   PermissionManagementLazyRoute: PermissionManagementLazyRoute,
   RoleManagementLazyRoute: RoleManagementLazyRoute,
+  RolesIdLazyRoute: RolesIdLazyRoute,
 }
 
 export const routeTree = rootRoute
@@ -128,7 +152,8 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/permission-management",
-        "/role-management"
+        "/role-management",
+        "/roles/$id"
       ]
     },
     "/": {
@@ -139,6 +164,9 @@ export const routeTree = rootRoute
     },
     "/role-management": {
       "filePath": "role-management.lazy.tsx"
+    },
+    "/roles/$id": {
+      "filePath": "roles/$id.lazy.tsx"
     }
   }
 }
