@@ -30,9 +30,6 @@ export function useAssignEmployeeToRole(roleID: string): UseMutationResult<void,
       await queryClient.invalidateQueries({
         queryKey: ["roles", roleID],
       });
-      await queryClient.invalidateQueries({
-        queryKey: ["roles"],
-      });
     }
   });
 }
