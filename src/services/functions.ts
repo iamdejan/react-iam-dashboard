@@ -16,6 +16,13 @@ export async function getRoles(): Promise<Role[]> {
   return rolesDataPromise;
 }
 
+export async function getRole(id: string): Promise<Role | undefined> {
+  const roleDataPromise = Promise.resolve(roles.find((role) => role.id === id));
+  const sleepPromise = delay(delayMS);
+  await Promise.allSettled([roleDataPromise, sleepPromise]);
+  return roleDataPromise;
+}
+
 export async function createRole(role: Role): Promise<void> {
   roles = [...roles, role];
   await delay(delayMS);

@@ -1,4 +1,4 @@
-import { useMutation, UseMutationResult, useQueryClient } from "@tanstack/react-query";
+import { UseMutationResult, useMutation, useQueryClient } from "@tanstack/react-query";
 import Role from "../types/Role";
 import { createRole } from "./functions";
 

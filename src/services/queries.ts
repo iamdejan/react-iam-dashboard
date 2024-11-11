@@ -1,10 +1,17 @@
-import { useQuery, UseQueryResult } from "@tanstack/react-query";
+import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import Role from "../types/Role";
-import { getRoles } from "./functions";
+import { getRole, getRoles } from "./functions";
 
 export function useRoles(): UseQueryResult<Role[]> {
   return useQuery({
     queryKey: ["roles"],
     queryFn: getRoles,
+  });
+}
+
+export function useRole(id: string): UseQueryResult<Role> {
+  return useQuery({
+    queryKey: ["roles", id],
+    queryFn: async () => await getRole(id),
   });
 }

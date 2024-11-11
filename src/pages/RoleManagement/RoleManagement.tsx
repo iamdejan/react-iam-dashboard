@@ -8,6 +8,7 @@ import { useForm, zodResolver } from "@mantine/form";
 import { CreateRole, CreateRoleSchema } from "../../schema/CreateRoleSchema";
 import { useCreateRole } from "../../services/mutations";
 import { ulid } from "ulid";
+import { Link } from "@tanstack/react-router";
 
 export default function RoleManagement(): JSX.Element {
   const rolesQuery = useRoles();
@@ -17,6 +18,7 @@ export default function RoleManagement(): JSX.Element {
     {
       accessorKey: "id",
       header: "ID",
+      Cell: ({ renderedCellValue }) => <Link to="/roles/$id" params={{ id: [renderedCellValue ?? ""].toString() }}>{renderedCellValue}</Link>,
     },
     {
       accessorKey: "team",
@@ -41,7 +43,7 @@ export default function RoleManagement(): JSX.Element {
       highlightOnHover: true,
       withColumnBorders: true,
       withRowBorders: true,
-      striped: false
+      striped: false,
     },
   });
 
@@ -68,23 +70,23 @@ export default function RoleManagement(): JSX.Element {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <form
           style={{
-            width: "60%"
-          }} 
+            width: "60%",
+          }}
           onSubmit={onSubmit(handleCreateRole)}
         >
-          <Title order={3} mb="1rem">Create Role</Title>
+          <Title order={3} mb="1rem">
+            Create Role
+          </Title>
           <Select
             label="Team"
             placeholder="Team"
             data={Object.keys(Team)}
-             
             key={key("team")}
-             
             {...getInputProps("team")}
           />
           <TextInput
@@ -95,31 +97,35 @@ export default function RoleManagement(): JSX.Element {
             {...getInputProps("role")}
           />
 
-          <Button type="submit" mt="1rem" disabled={createRoleMutation.isPending}>
+          <Button
+            type="submit"
+            mt="1rem"
+            disabled={createRoleMutation.isPending}
+          >
             Create Role
           </Button>
         </form>
       </Paper>
 
-      {rolesQuery.isLoading &&
+      {rolesQuery.isLoading && (
         <Box
           style={{
             display: "flex",
             width: "100%",
             height: "40vh",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
           }}
         >
           <Loader id="loader" />
         </Box>
-      }
+      )}
 
-      {rolesQuery.isFetched &&
+      {rolesQuery.isFetched && (
         <Paper mt="1rem">
           <MRT_Table table={table} />
         </Paper>
-      }
+      )}
     </Box>
   );
 }

@@ -1,9 +1,9 @@
 import { AppShell, Box, Title, useMantineTheme } from "@mantine/core";
 import { FileRoutesByPath, Link, Outlet } from "@tanstack/react-router";
+import { IconBriefcase, IconUsers } from "@tabler/icons-react";
 import { JSX, lazy } from "react";
-import SidebarLink from "../SidebarLink";
-import { IconUsers, IconBriefcase } from "@tabler/icons-react";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import SidebarLink from "../SidebarLink";
 
 const TanStackRouterDevtools =
   process.env.NODE_ENV === "production"
@@ -15,22 +15,22 @@ const TanStackRouterDevtools =
     );
 
 type RouteLink = {
-  link: keyof FileRoutesByPath,
-  title: string,
-  icon?: JSX.Element
+  link: keyof FileRoutesByPath;
+  title: string;
+  icon?: JSX.Element;
 };
 
 const routeList: RouteLink[] = [
   {
     link: "/role-management",
     title: "Role Management",
-    icon: <IconUsers />
+    icon: <IconUsers />,
   },
   {
     link: "/permission-management",
     title: "Permission Management",
-    icon: <IconBriefcase />
-  }
+    icon: <IconBriefcase />,
+  },
 ];
 
 export default function RootMenu(): JSX.Element {
@@ -54,18 +54,16 @@ export default function RootMenu(): JSX.Element {
           <Box
             style={{
               width: "100%",
-              textAlign: "right"
+              textAlign: "right",
             }}
           >
-            <Title
-              order={2}
-            >
+            <Title order={2}>
               <Link
                 href="/"
                 style={{
                   textDecoration: "none",
                   color: "inherit",
-                  fontWeight: "normal"
+                  fontWeight: "normal",
                 }}
               >
                 React IAM Dashboard
@@ -85,7 +83,7 @@ export default function RootMenu(): JSX.Element {
         </AppShell.Navbar>
         <AppShell.Main
           style={{
-            backgroundColor: theme.colors.tosca[1]
+            backgroundColor: theme.colors.tosca[1],
           }}
         >
           <Outlet />
