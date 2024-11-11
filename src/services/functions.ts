@@ -9,6 +9,11 @@ function delay(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+export async function createRole(role: Role): Promise<void> {
+  roles = [...roles, role];
+  await delay(delayMS);
+}
+
 export async function getRoles(): Promise<Role[]> {
   const rolesDataPromise = Promise.resolve(roles);
   const sleepPromise = delay(delayMS);
@@ -23,7 +28,10 @@ export async function getRole(id: string): Promise<Role | undefined> {
   return roleDataPromise;
 }
 
-export async function createRole(role: Role): Promise<void> {
-  roles = [...roles, role];
+export async function assignEmployeeToRole(roleID: string, employeeID: string): Promise<void> {
+  const index = roles.findIndex((role) => role.id === roleID);
+  const role = roles[index];
+  role.employees = [...role.employees, employeeID];
+  roles[index] = role;
   await delay(delayMS);
 }
