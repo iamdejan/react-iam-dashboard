@@ -1,6 +1,7 @@
 import { UseMutationResult, useMutation, useQueryClient } from "@tanstack/react-query";
 import Role from "../types/Role";
-import { assignEmployeeToRole, createRole } from "./functions";
+import { assignEmployeeToRole, createPermission, createRole } from "./functions";
+import Permission from "../types/Permission";
 
 export function useCreateRole(): UseMutationResult<unknown, Error, Role> {
   const queryClient = useQueryClient();
@@ -29,6 +30,22 @@ export function useAssignEmployeeToRole(roleID: string): UseMutationResult<void,
     onSettled: async () => {
       await queryClient.invalidateQueries({
         queryKey: ["roles", roleID],
+      });
+    }
+  });
+}
+
+export function useCreatePermission(): UseMutationResult<unknown, Error, Permission> {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async (permission: Permission) => await createPermission(permission),
+    onError: (error) => {
+      console.error("error on permission creation", error);
+    },
+    onSettled: async () => {
+      await queryClient.invalidateQueries({
+        queryKey: ["permissions"],
       });
     }
   });

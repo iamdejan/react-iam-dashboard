@@ -1,6 +1,7 @@
 import { UseQueryResult, useQuery, useQueryClient } from "@tanstack/react-query";
 import Role from "../types/Role";
-import { getRole, getRoles } from "./functions";
+import { getPermission, getPermissions, getRole, getRoles } from "./functions";
+import Permission from "../types/Permission";
 
 export function useRoles(): UseQueryResult<Role[]> {
   return useQuery({
@@ -17,6 +18,25 @@ export function useRole(id: string): UseQueryResult<Role> {
     queryFn: async () => await getRole(id),
     initialData: (): Role | undefined => {
       return queryClient.getQueryData<Role[] | undefined>(["roles"])?.find((role) => role.id === id);
+    },
+  });
+}
+
+export function usePermissions(): UseQueryResult<Permission[]> {
+  return useQuery({
+    queryKey: ["permissions"],
+    queryFn: getPermissions,
+  });
+}
+
+export function usePermission(id: string): UseQueryResult<Permission> {
+  const queryClient = useQueryClient();
+
+  return useQuery({
+    queryKey: ["permissions", id],
+    queryFn: async () => await getPermission(id),
+    initialData: (): Permission | undefined => {
+      return queryClient.getQueryData<Permission[] | undefined>(["permissions"])?.find((permission) => permission.id === id);
     },
   });
 }
