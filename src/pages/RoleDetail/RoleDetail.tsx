@@ -59,6 +59,7 @@ export default function RoleDetail(): JSX.Element {
                   style={{
                     flexGrow: "1"
                   }}
+                  placeholder="Employee ID"
                   value={employeeID}
                   onChange={(event) => setEmployeeID(event.currentTarget.value)}
                 />

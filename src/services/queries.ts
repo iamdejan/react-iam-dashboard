@@ -1,12 +1,21 @@
 import { UseQueryResult, useQuery, useQueryClient } from "@tanstack/react-query";
 import Role from "../types/Role";
-import { getPermission, getPermissions, getRole, getRoles } from "./functions";
+import { getPermission, getPermissions, getRole, getRoles, getRolesByTeam } from "./functions";
 import Permission from "../types/Permission";
+import Team from "../types/Team";
 
 export function useRoles(): UseQueryResult<Role[]> {
   return useQuery({
     queryKey: ["roles"],
     queryFn: getRoles,
+  });
+}
+
+export function useRolesByTeam(team: Team|undefined): UseQueryResult<Role[]> {
+  return useQuery({
+    queryKey: ["roles", "team", team],
+    enabled: team !== undefined,
+    queryFn: async () => await getRolesByTeam(team),
   });
 }
 

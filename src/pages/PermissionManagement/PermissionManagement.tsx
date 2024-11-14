@@ -8,6 +8,7 @@ import { CreatePermission, CreatePermissionSchema } from "../../schema/CreatePer
 import { useForm, zodResolver } from "@mantine/form";
 import { ulid } from "ulid";
 import { useCreatePermission } from "../../services/mutations";
+import { Link } from "@tanstack/react-router";
 
 export default function PermissionManagement(): JSX.Element {
   const permissionsQuery = usePermissions();
@@ -17,6 +18,7 @@ export default function PermissionManagement(): JSX.Element {
     {
       accessorKey: "id",
       header: "ID",
+      Cell: ({ renderedCellValue }) => <Link to="/permissions/$id" params={{ id: [renderedCellValue ?? ""].toString() }}>{renderedCellValue}</Link>,
     },
     {
       accessorKey: "team",
@@ -104,6 +106,7 @@ export default function PermissionManagement(): JSX.Element {
           <Button
             type="submit"
             mt="1rem"
+            disabled={createPermissionMutation.isPending}
           >
             Create Permission
           </Button>

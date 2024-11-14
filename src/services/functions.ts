@@ -2,6 +2,7 @@ import { permissionsData } from "../data/permissions";
 import { rolesData } from "../data/roles";
 import Permission from "../types/Permission";
 import Role from "../types/Role";
+import Team from "../types/Team";
 
 const delayMS = 1000;
 
@@ -24,6 +25,13 @@ export async function getRoles(): Promise<Role[]> {
   return rolesDataPromise;
 }
 
+export async function getRolesByTeam(team?: Team): Promise<Role[]> {
+  const rolesDataPromise = Promise.resolve(roles.filter((role) => Boolean(team) && role.team === team));
+  const sleepPromise = delay(delayMS);
+  await Promise.allSettled([rolesDataPromise, sleepPromise]);
+  return rolesDataPromise;
+}
+
 export async function getRole(id: string): Promise<Role | undefined> {
   const roleDataPromise = Promise.resolve(roles.find((role) => role.id === id));
   const sleepPromise = delay(delayMS);
@@ -34,7 +42,7 @@ export async function getRole(id: string): Promise<Role | undefined> {
 export async function assignEmployeeToRole(roleID: string, employeeID: string): Promise<void> {
   const index = roles.findIndex((role) => role.id === roleID);
   const role = roles[index];
-  role.employees = [...role.employees, employeeID];
+  role.assignEmployee(employeeID);
   roles[index] = role;
   await delay(delayMS);
 }
@@ -59,4 +67,11 @@ export async function getPermission(id: string): Promise<Permission | undefined>
   const sleepPromise = delay(delayMS);
   await Promise.allSettled([permissionDataPromise, sleepPromise]);
   return permissionDataPromise;
+}
+
+export async function assignRoleToPermission(permissionID: string, role: Role): Promise<void> {
+  const index = permissions.findIndex((p) => p.id === permissionID);
+  const foundPermission = permissions[index];
+  foundPermission.assignRole(role);
+  await delay(delayMS);
 }
