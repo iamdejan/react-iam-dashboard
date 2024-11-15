@@ -1,6 +1,6 @@
+import { JSX, useState } from "react";
 import { Box, Button, Loader, Paper, Table, TextInput, Title } from "@mantine/core";
 import { getRouteApi } from "@tanstack/react-router";
-import { JSX, useState } from "react";
 import { useRole } from "../../services/queries";
 import { useAssignEmployeeToRole } from "../../services/mutations";
 
@@ -12,6 +12,8 @@ export default function RoleDetail(): JSX.Element {
   const assignEmployeeToRoleMutation = useAssignEmployeeToRole(id);
   const [employeeID, setEmployeeID] = useState("");
 
+  console.log("id =", id);
+  console.log("roleQuery =", roleQuery);
   const rows = (roleQuery.data?.employees ?? []).map((employeeID) => (
     <Table.Tr key={employeeID}>
       <Table.Td>{employeeID}</Table.Td>
