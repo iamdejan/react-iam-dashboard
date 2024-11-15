@@ -15,7 +15,8 @@
     "routes:generate": "tsr generate",
     "routes:watch": "tsr watch",
     "vitest": "vitest run",
-    "vitest:watch": "vitest"
+    "vitest:watch": "vitest",
+    "vitest:ui": "vitest --ui"
   },
   "dependencies": {
     "@mantine/core": "^7.14.0",
