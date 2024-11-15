@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { useRole, useRoles } from "../queries";
+import { usePermissions, useRole, useRoles, useRolesByTeam } from "../queries";
 import { QueryClient } from "@tanstack/react-query";
 import { renderWithQueryClient } from "../../test-utils/render";
 import Team from "../../types/Team";
@@ -28,14 +28,50 @@ describe("useRole", () => {
     });
 
     await waitFor(() => expect(result.current.isSuccess).toBe(true), { timeout: 2000, interval: 200 });
+    const data = result.current.data;
+    expect(data).not.toBeNull();
+    expect(data).not.toBeUndefined();
+
+    expect(data?.id).toBe("01JCCQ8GYJ1RF51MW6QFYA6HSN");
+    expect(data?.team).toBe(Team.LEASING);
+    expect(data?.position).toBe("supervisor");
+  });
+});
+
+describe("useRolesByTeam", () => {
+  const team = Team.INFRA;
+
+  it("should return a list of roles", async () => {
+    const { result } = renderHook(() => useRolesByTeam(team), {
+      wrapper: renderWithQueryClient(queryClient),
+    });
+
+    await waitFor(() => expect(result.current.isSuccess).toBe(true), { timeout: 2000, interval: 200 });
     expect(result.current.data).not.toBeNull();
     expect(result.current.data).not.toBeUndefined();
 
-    if (result.current.data) {
-      const data = result.current.data;
-      expect(data.id).toBe("01JCCQ8GYJ1RF51MW6QFYA6HSN");
-      expect(data.team).toBe(Team.LEASING);
-      expect(data.position).toBe("supervisor");
+    const roles = result.current.data ?? [];
+    expect(roles.length).toBeGreaterThanOrEqual(1);
+    for (const role of roles) {
+      expect(role.team).toBe(Team.INFRA);
+    }
+  });
+});
+
+describe("usePermissions", () => {
+  it("should return a list of permissions", async () => {
+    const { result } = renderHook(() => usePermissions(), {
+      wrapper: renderWithQueryClient(queryClient),
+    });
+
+    await waitFor(() => expect(result.current.isSuccess).toBe(true), { timeout: 2000, interval: 200 });
+    expect(result.current.data).not.toBeNull();
+    expect(result.current.data).not.toBeUndefined();
+
+    const permissions = result.current.data ?? [];
+    for (const permission of permissions) {
+      expect(permission).not.toBeNull();
+      expect(permission).not.toBeUndefined();
     }
   });
 });
