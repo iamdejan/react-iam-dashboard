@@ -12,8 +12,6 @@ export default function RoleDetail(): JSX.Element {
   const assignEmployeeToRoleMutation = useAssignEmployeeToRole(id);
   const [employeeID, setEmployeeID] = useState("");
 
-  console.log("id =", id);
-  console.log("roleQuery =", roleQuery);
   const rows = (roleQuery.data?.employees ?? []).map((employeeID) => (
     <Table.Tr key={employeeID}>
       <Table.Td>{employeeID}</Table.Td>
