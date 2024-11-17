@@ -1,13 +1,19 @@
 import { renderHook, waitFor } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 import { usePermissions, useRole, useRoles, useRolesByTeam } from "../queries";
 import { QueryClient } from "@tanstack/react-query";
 import { renderWithQueryClient } from "../../test-utils/render";
 import Team from "../../types/Team";
+import typia from "typia";
+import { rolesData } from "../../data/roles";
 
 const queryClient = new QueryClient();
 
 describe("useRoles", () => {
+  beforeEach(() => {
+    localStorage.setItem("roles", typia.json.assertStringify(rolesData));
+  });
+
   it("should return a list of roles", async () => {
     const { result } = renderHook(() => useRoles(), {
       wrapper: renderWithQueryClient(queryClient),
@@ -16,6 +22,7 @@ describe("useRoles", () => {
     await waitFor(() => expect(result.current.isSuccess).toBe(true), { timeout: 2000, interval: 200 });
     expect(result.current.data).not.toBeNull();
     expect(result.current.data).not.toBeUndefined();
+    expect(result.current.data?.length).toBeGreaterThanOrEqual(1);
   });
 });
 
