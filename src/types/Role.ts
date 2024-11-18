@@ -1,3 +1,4 @@
+import { Primitive } from "typia";
 import Team from "./Team";
 
 export default class Role {
@@ -11,6 +12,10 @@ export default class Role {
     this.id = id;
     this.team = team;
     this.position = position.toLowerCase();
+  }
+
+  public static fromTypiaPrimitive(other: Primitive<Role>): Role {
+    return new Role(other.id, other.team, other.position);
   }
 
   public assignEmployee(employeeID: string): void {

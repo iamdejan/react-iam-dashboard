@@ -1,3 +1,4 @@
+import { Primitive } from "typia";
 import Role from "./Role";
 import Team from "./Team";
 
@@ -14,6 +15,10 @@ export default class Permission {
     this.entity = entity.toLowerCase();
     this.action = action.toLowerCase();
     this.roles = [];
+  }
+
+  public static fromTypiaPrimitive(other: Primitive<Permission>): Permission {
+    return new Permission(other.id, other.team, other.entity, other.action);
   }
 
   public toString(): string {

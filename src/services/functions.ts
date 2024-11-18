@@ -14,7 +14,15 @@ function getRolesFromLocalStorage(): Role[] {
   if (data === null) {
     return [];
   }
-  return typia.json.assertParse<Role[]>(data) as Role[];
+
+  const roles: Role[] = [];
+  const parsedData = typia.json.assertParse<Role[]>(data);
+  for (const d of parsedData) {
+    if (typia.is<Role>(d)) {
+      roles.push(Role.fromTypiaPrimitive(d));
+    }
+  }
+  return roles;
 }
 
 export async function createRole(role: Role): Promise<void> {
@@ -62,7 +70,15 @@ function getPermissionsFromLocalStorage(): Permission[] {
   if (data === null) {
     return [];
   }
-  return typia.json.assertParse<Permission[]>(data) as Permission[];
+
+  const permissions: Permission[] = [];
+  const parsedData = typia.json.assertParse<Permission[]>(data);
+  for (const d of parsedData) {
+    if (typia.is<Permission>(d)) {
+      permissions.push(Permission.fromTypiaPrimitive(d));
+    }
+  }
+  return permissions;
 }
 
 export async function createPermission(permission: Permission): Promise<void> {
