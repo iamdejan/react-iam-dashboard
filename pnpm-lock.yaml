@@ -9,29 +9,29 @@ importers:
   .:
     dependencies:
       '@mantine/core':
-        specifier: ^7.14.0
-        version: 7.14.0(@mantine/hooks@7.14.0(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^7.14.1
+        version: 7.14.1(@mantine/hooks@7.14.1(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@mantine/dates':
-        specifier: ^7.14.0
-        version: 7.14.0(@mantine/core@7.14.0(@mantine/hooks@7.14.0(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.14.0(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^7.14.1
+        version: 7.14.1(@mantine/core@7.14.1(@mantine/hooks@7.14.1(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.14.1(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@mantine/form':
-        specifier: ^7.14.0
-        version: 7.14.0(react@18.3.1)
+        specifier: ^7.14.1
+        version: 7.14.1(react@18.3.1)
       '@mantine/hooks':
-        specifier: ^7.14.0
-        version: 7.14.0(react@18.3.1)
+        specifier: ^7.14.1
+        version: 7.14.1(react@18.3.1)
       '@tabler/icons-react':
         specifier: ^3.22.0
         version: 3.22.0(react@18.3.1)
       '@tanstack/react-query':
-        specifier: ^5.60.2
-        version: 5.60.2(react@18.3.1)
+        specifier: ^5.60.5
+        version: 5.60.5(react@18.3.1)
       '@tanstack/react-query-devtools':
-        specifier: ^5.60.2
-        version: 5.60.2(@tanstack/react-query@5.60.2(react@18.3.1))(react@18.3.1)
+        specifier: ^5.60.5
+        version: 5.60.5(@tanstack/react-query@5.60.5(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router':
-        specifier: ^1.81.5
-        version: 1.81.5(@tanstack/router-generator@1.79.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^1.82.1
+        version: 1.82.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -40,10 +40,10 @@ importers:
         version: 1.11.13
       mantine-form-zod-resolver:
         specifier: ^1.1.0
-        version: 1.1.0(@mantine/form@7.14.0(react@18.3.1))(zod@3.23.8)
+        version: 1.1.0(@mantine/form@7.14.1(react@18.3.1))(zod@3.23.8)
       mantine-react-table:
         specifier: 2.0.0-beta.7
-        version: 2.0.0-beta.7(@mantine/core@7.14.0(@mantine/hooks@7.14.0(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/dates@7.14.0(@mantine/core@7.14.0(@mantine/hooks@7.14.0(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.14.0(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.14.0(react@18.3.1))(@tabler/icons-react@3.22.0(react@18.3.1))(clsx@2.1.1)(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 2.0.0-beta.7(@mantine/core@7.14.1(@mantine/hooks@7.14.1(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/dates@7.14.1(@mantine/core@7.14.1(@mantine/hooks@7.14.1(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.14.1(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.14.1(react@18.3.1))(@tabler/icons-react@3.22.0(react@18.3.1))(clsx@2.1.1)(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -74,7 +74,7 @@ importers:
         version: 1.79.0
       '@tanstack/router-devtools':
         specifier: ^1.81.5
-        version: 1.81.5(@tanstack/react-router@1.81.5(@tanstack/router-generator@1.79.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.81.5(@tanstack/react-router@1.82.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-plugin':
         specifier: ^1.79.0
         version: 1.79.0(vite@5.4.11(@types/node@22.9.0)(sugarss@4.0.1(postcss@8.4.49)))
@@ -624,29 +624,29 @@ packages:
   '@jsr/ryoppippi__unplugin-typia@1.0.7':
     resolution: {integrity: sha512-pjJcs1JhCjd3j3jxBJtOqK1Hrh6w1NWKfNh/mXPZHwAnsU0Ov41K3wHGOAjoaiIm7JJew854kcQ+EHWPg9HL/w==, tarball: https://npm.jsr.io/~/11/@jsr/ryoppippi__unplugin-typia/1.0.7.tgz}
 
-  '@mantine/core@7.14.0':
-    resolution: {integrity: sha512-Osj3nwCXFhOVHIoDtpEpciP7huPhGmG/0w+Zol5tKJ9SG5trV4NDfdFwFcNoxx5al8L6eCLS/fJhloFXaqhOnA==}
+  '@mantine/core@7.14.1':
+    resolution: {integrity: sha512-oHqaOE1n4KJkvJgF628OCVXE2zUgkEotEsPUdVaC58qRfJ7SvZAI26JNbUG8+MoqHHEqHKtBaRkTyuEVMbomxw==}
     peerDependencies:
-      '@mantine/hooks': 7.14.0
+      '@mantine/hooks': 7.14.1
       react: ^18.x || ^19.x
       react-dom: ^18.x || ^19.x
 
-  '@mantine/dates@7.14.0':
-    resolution: {integrity: sha512-GXChSxIQi1iFg6Z9t7c2AUuHPDKu2e188MYbUwbVB7EkKSSnSDAs0YxHguF2+uMAKea/u22WyKi/LPdemIyr0w==}
+  '@mantine/dates@7.14.1':
+    resolution: {integrity: sha512-NtQWisJi0DmYehShmYvHM6bvUsVE864kW4NJc8rbatFL7/bhCp9U49s6vqpz6B1GxZ2WfiQZtjPE1FLInWX+Pw==}
     peerDependencies:
-      '@mantine/core': 7.14.0
-      '@mantine/hooks': 7.14.0
+      '@mantine/core': 7.14.1
+      '@mantine/hooks': 7.14.1
       dayjs: '>=1.0.0'
       react: ^18.x || ^19.x
       react-dom: ^18.x || ^19.x
 
-  '@mantine/form@7.14.0':
-    resolution: {integrity: sha512-oZQuSiREcZLALTILUwovIc1GuNSQAZfFyhUCQE2MqF5tmjcy51HdeQ0kBtkjCylrc50v165KVtANuWhFwA/2dg==}
+  '@mantine/form@7.14.1':
+    resolution: {integrity: sha512-ziYsTsFhR1sEjGebwahKr7LRRFQQtH47o+rPLbvD0FGb6aYRVQgaebQo4jVgxFIgqiafxGNEpD6GkPBqmCmU4g==}
     peerDependencies:
       react: ^18.x || ^19.x
 
-  '@mantine/hooks@7.14.0':
-    resolution: {integrity: sha512-BJ577AoQ5KnvbuaG174TYAmL2UqcX9qh9aL0aOx+gqyMM6GWeBXUXWx1kcMCzaDbYZwfQptU476fpSjHdcLjMw==}
+  '@mantine/hooks@7.14.1':
+    resolution: {integrity: sha512-VlgTyV/9WNFCwCshW1KHMYNzLt+M8aG68E1lWaqOXtyWSLJo+X5zQJGg0f8bwGbJvIMQCpQd0yTLfnjD6uAtrA==}
     peerDependencies:
       react: ^18.x || ^19.x
 
@@ -856,36 +856,36 @@ packages:
   '@tabler/icons@3.22.0':
     resolution: {integrity: sha512-IfgGzhFph5OBr2wTieWL/hyAs0FThnq9O155a6kfGYxqx7h5LQw91wnRswhEaGhXCcfmR7ZVDUr9H+x4b9Pb8g==}
 
-  '@tanstack/history@1.81.3':
-    resolution: {integrity: sha512-ZNdhkE+Ikv2GPj29m99Bu4qkiH1LeZQkSVjRUbTmNRdvEJmKKrKq1B5p5t1IHlfhoStLu5JIcWeEHHZ88jEfdQ==}
+  '@tanstack/history@1.81.9':
+    resolution: {integrity: sha512-9MPknhhnvZKifK4jSvva6NDqYQwsNaptrRzO4ejk6yCLyi4koVG4u3C4VCeClYZY5etLEQbO8wXU9knEFZpMeg==}
     engines: {node: '>=12'}
 
   '@tanstack/match-sorter-utils@8.19.4':
     resolution: {integrity: sha512-Wo1iKt2b9OT7d+YGhvEPD3DXvPv2etTusIMhMUoG7fbhmxcXCtIjJDEygy91Y2JFlwGyjqiBPRozme7UD8hoqg==}
     engines: {node: '>=12'}
 
-  '@tanstack/query-core@5.59.20':
-    resolution: {integrity: sha512-e8vw0lf7KwfGe1if4uPFhvZRWULqHjFcz3K8AebtieXvnMOz5FSzlZe3mTLlPuUBcydCnBRqYs2YJ5ys68wwLg==}
+  '@tanstack/query-core@5.60.5':
+    resolution: {integrity: sha512-jiS1aC3XI3BJp83ZiTuDLerTmn9P3U95r6p+6/SNauLJaYxfIC4dMuWygwnBHIZxjn2zJqEpj3nysmPieoxfPQ==}
 
   '@tanstack/query-devtools@5.59.20':
     resolution: {integrity: sha512-vxhuQ+8VV4YWQSFxQLsuM+dnEKRY7VeRzpNabFXdhEwsBYLrjXlF1pM38A8WyKNLqZy8JjyRO8oP4Wd/oKHwuQ==}
 
-  '@tanstack/react-query-devtools@5.60.2':
-    resolution: {integrity: sha512-h+4/KwgUuAu4fcfrlSnD9K4gxR9Glbi3SbQUWBl2iF9Nt94aVcmCwAACGHWqqKhDPz1KOiRe9bIq2KZ4UsZMEA==}
+  '@tanstack/react-query-devtools@5.60.5':
+    resolution: {integrity: sha512-lzANl0ih3CNKBGUoXhhkAAHI1Y4Yqs9Jf3iuTUsGiPpmF0RWXTeYFaQxc+h1PhJz3VwYrIYCwmPoNts0mSjSuA==}
     peerDependencies:
-      '@tanstack/react-query': ^5.60.2
+      '@tanstack/react-query': ^5.60.5
       react: ^18 || ^19
 
-  '@tanstack/react-query@5.60.2':
-    resolution: {integrity: sha512-JhpJNxIAPuE0YCpP1Py4zAsgx+zY0V531McRMtQbwVlJF8+mlZwcOPrzGmPV248K8IP+mPbsfxXToVNMNwjUcw==}
+  '@tanstack/react-query@5.60.5':
+    resolution: {integrity: sha512-M77bOsPwj1wYE56gk7iJvxGAr4IC12NWdIDhT+Eo8ldkWRHMvIR8I/rufIvT1OXoV/bl7EECwuRuMlxxWtvW2Q==}
     peerDependencies:
       react: ^18 || ^19
 
-  '@tanstack/react-router@1.81.5':
-    resolution: {integrity: sha512-7DHFOcbLvvH9ZpWeZ7hWOEUjfzKKEpejLcHFrOoimOnsbiDIVGU8+X4eJqjIppvoRSHLSHpRCrt4u8f1feDc9Q==}
+  '@tanstack/react-router@1.82.1':
+    resolution: {integrity: sha512-C3+itdLVvEA3dOd/dYOrFSpqVBhWt/WUfjMWfda5lAGIxGkPM8Cv+7IE6P6LI80JOnUPGLpup23SShPD+cv3kw==}
     engines: {node: '>=12'}
     peerDependencies:
-      '@tanstack/router-generator': 1.79.0
+      '@tanstack/router-generator': 1.81.9
       react: '>=18'
       react-dom: '>=18'
     peerDependenciesMeta:
@@ -2981,10 +2981,10 @@ snapshots:
       - sugarss
       - terser
 
-  '@mantine/core@7.14.0(@mantine/hooks@7.14.0(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@mantine/core@7.14.1(@mantine/hooks@7.14.1(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/react': 0.26.27(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@mantine/hooks': 7.14.0(react@18.3.1)
+      '@mantine/hooks': 7.14.1(react@18.3.1)
       clsx: 2.1.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -2995,22 +2995,22 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@mantine/dates@7.14.0(@mantine/core@7.14.0(@mantine/hooks@7.14.0(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.14.0(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@mantine/dates@7.14.1(@mantine/core@7.14.1(@mantine/hooks@7.14.1(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.14.1(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@mantine/core': 7.14.0(@mantine/hooks@7.14.0(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@mantine/hooks': 7.14.0(react@18.3.1)
+      '@mantine/core': 7.14.1(@mantine/hooks@7.14.1(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@mantine/hooks': 7.14.1(react@18.3.1)
       clsx: 2.1.1
       dayjs: 1.11.13
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@mantine/form@7.14.0(react@18.3.1)':
+  '@mantine/form@7.14.1(react@18.3.1)':
     dependencies:
       fast-deep-equal: 3.1.3
       klona: 2.0.6
       react: 18.3.1
 
-  '@mantine/hooks@7.14.0(react@18.3.1)':
+  '@mantine/hooks@7.14.1(react@18.3.1)':
     dependencies:
       react: 18.3.1
 
@@ -3157,38 +3157,36 @@ snapshots:
 
   '@tabler/icons@3.22.0': {}
 
-  '@tanstack/history@1.81.3': {}
+  '@tanstack/history@1.81.9': {}
 
   '@tanstack/match-sorter-utils@8.19.4':
     dependencies:
       remove-accents: 0.5.0
 
-  '@tanstack/query-core@5.59.20': {}
+  '@tanstack/query-core@5.60.5': {}
 
   '@tanstack/query-devtools@5.59.20': {}
 
-  '@tanstack/react-query-devtools@5.60.2(@tanstack/react-query@5.60.2(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-query-devtools@5.60.5(@tanstack/react-query@5.60.5(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/query-devtools': 5.59.20
-      '@tanstack/react-query': 5.60.2(react@18.3.1)
+      '@tanstack/react-query': 5.60.5(react@18.3.1)
       react: 18.3.1
 
-  '@tanstack/react-query@5.60.2(react@18.3.1)':
+  '@tanstack/react-query@5.60.5(react@18.3.1)':
     dependencies:
-      '@tanstack/query-core': 5.59.20
+      '@tanstack/query-core': 5.60.5
       react: 18.3.1
 
-  '@tanstack/react-router@1.81.5(@tanstack/router-generator@1.79.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-router@1.82.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/history': 1.81.3
+      '@tanstack/history': 1.81.9
       '@tanstack/react-store': 0.5.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       jsesc: 3.0.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       tiny-invariant: 1.3.3
       tiny-warning: 1.0.3
-    optionalDependencies:
-      '@tanstack/router-generator': 1.79.0
 
   '@tanstack/react-store@0.5.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -3215,9 +3213,9 @@ snapshots:
       chokidar: 3.6.0
       yargs: 17.7.2
 
-  '@tanstack/router-devtools@1.81.5(@tanstack/react-router@1.81.5(@tanstack/router-generator@1.79.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/router-devtools@1.81.5(@tanstack/react-router@1.82.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/react-router': 1.81.5(@tanstack/router-generator@1.79.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-router': 1.82.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       goober: 2.1.16(csstype@3.1.3)
       react: 18.3.1
@@ -4191,16 +4189,16 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  mantine-form-zod-resolver@1.1.0(@mantine/form@7.14.0(react@18.3.1))(zod@3.23.8):
+  mantine-form-zod-resolver@1.1.0(@mantine/form@7.14.1(react@18.3.1))(zod@3.23.8):
     dependencies:
-      '@mantine/form': 7.14.0(react@18.3.1)
+      '@mantine/form': 7.14.1(react@18.3.1)
       zod: 3.23.8
 
-  mantine-react-table@2.0.0-beta.7(@mantine/core@7.14.0(@mantine/hooks@7.14.0(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/dates@7.14.0(@mantine/core@7.14.0(@mantine/hooks@7.14.0(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.14.0(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.14.0(react@18.3.1))(@tabler/icons-react@3.22.0(react@18.3.1))(clsx@2.1.1)(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  mantine-react-table@2.0.0-beta.7(@mantine/core@7.14.1(@mantine/hooks@7.14.1(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/dates@7.14.1(@mantine/core@7.14.1(@mantine/hooks@7.14.1(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.14.1(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.14.1(react@18.3.1))(@tabler/icons-react@3.22.0(react@18.3.1))(clsx@2.1.1)(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@mantine/core': 7.14.0(@mantine/hooks@7.14.0(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@mantine/dates': 7.14.0(@mantine/core@7.14.0(@mantine/hooks@7.14.0(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.14.0(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@mantine/hooks': 7.14.0(react@18.3.1)
+      '@mantine/core': 7.14.1(@mantine/hooks@7.14.1(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@mantine/dates': 7.14.1(@mantine/core@7.14.1(@mantine/hooks@7.14.1(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mantine/hooks@7.14.1(react@18.3.1))(dayjs@1.11.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@mantine/hooks': 7.14.1(react@18.3.1)
       '@tabler/icons-react': 3.22.0(react@18.3.1)
       '@tanstack/match-sorter-utils': 8.19.4
       '@tanstack/react-table': 8.20.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
