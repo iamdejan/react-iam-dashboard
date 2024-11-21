@@ -18,7 +18,9 @@ export default class Permission {
   }
 
   public static fromTypiaPrimitive(other: Primitive<Permission>): Permission {
-    return new Permission(other.id, other.team, other.entity, other.action);
+    const permission = new Permission(other.id, other.team, other.entity, other.action);
+    permission.roles = other.roles.map((role) => Role.fromTypiaPrimitive(role));
+    return permission;
   }
 
   public toString(): string {
@@ -26,6 +28,6 @@ export default class Permission {
   }
 
   public assignRole(role: Role): void {
-    this.roles = [...this.roles, role];
+    this.roles.push(role);
   }
 };

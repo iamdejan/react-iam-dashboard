@@ -11,20 +11,31 @@ export default function PermissionDetail(): JSX.Element {
   const { id } = route.useParams();
   const permissionQuery = usePermission(id);
   const rolesQuery = useRolesByTeam(permissionQuery.data?.team);
-  const [role, setRole] = useState<Role|null>(null);
+  const [chosenRole, setChosenRole] = useState<Role|null>(null);
   const assignRoleToPermissionMutation = useAssignRoleToPermission(id);
 
-  const roleRows = (permissionQuery.data?.roles ?? []).map((role) => (
+  const roleRows = permissionQuery.data?.roles.map((role) => (
     <Table.Tr key={role.toString()}>
       <Table.Td>{role.toString()}</Table.Td>
     </Table.Tr>
   ));
-  const employeeRows = (permissionQuery.isLoading? []: permissionQuery.data?.roles ?? []).map((role) => role.employees.map((employee) => (
-    <Table.Tr key={role.toString() + "|" + employee}>
-      <Table.Td>{role.toString()}</Table.Td>
-      <Table.Td>{employee}</Table.Td>
-    </Table.Tr>
-  )));
+
+  function roleExistsInPermission(roleID: string): boolean {
+    if(permissionQuery.isLoading || permissionQuery.data === undefined) {
+      return false;
+    }
+
+    return Boolean(permissionQuery.data.roles.find((role) => role.id === roleID));
+  }
+
+  const employeeRows = (permissionQuery.isFetched && rolesQuery.isFetched? (rolesQuery.data ?? []) : [])
+    .filter((role) => roleExistsInPermission(role.id))
+    .map((role) => role.employees.map((employeeID) => (
+      <Table.Tr key={role.toString() + "|" + employeeID}>
+        <Table.Td>{role.toString()}</Table.Td>
+        <Table.Td>{employeeID}</Table.Td>
+      </Table.Tr>
+    )));
 
   function handleRoleSelectionChange(value: string|null): void {
     if(value === null) {
@@ -33,13 +44,13 @@ export default function PermissionDetail(): JSX.Element {
 
     const role = rolesQuery.data?.find((role) => role.toString() === value);
     if(role) {
-      setRole(role);
+      setChosenRole(role);
     }
   }
 
   function handleAssignRoleToPermission(): void {
-    if(role !== null) {
-      assignRoleToPermissionMutation.mutate(role);
+    if(chosenRole !== null) {
+      assignRoleToPermissionMutation.mutate(chosenRole);
     }
   }
 
@@ -72,7 +83,7 @@ export default function PermissionDetail(): JSX.Element {
                 <Select
                   label="Role"
                   placeholder="Role"
-                  value={role?.toString()}
+                  value={chosenRole?.toString()}
                   onChange={handleRoleSelectionChange}
                   data={(rolesQuery.data?.map((role) => role.toString()) ?? [])}
                 />
@@ -95,12 +106,12 @@ export default function PermissionDetail(): JSX.Element {
                   {roleRows}
                 </Table.Tbody>
               </Table>
-              <Title order={2} mt="lg">Users</Title>
+              <Title order={2} mt="lg">Employees</Title>
               <Table>
                 <Table.Thead>
                   <Table.Tr>
                     <Table.Th>Role ID</Table.Th>
-                    <Table.Th>User ID</Table.Th>
+                    <Table.Th>Employee ID</Table.Th>
                   </Table.Tr>
                 </Table.Thead>
                 <Table.Tbody>

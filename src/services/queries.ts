@@ -11,10 +11,10 @@ export function useRoles(): UseQueryResult<Role[]> {
   });
 }
 
-export function useRolesByTeam(team: Team|undefined): UseQueryResult<Role[]> {
+export function useRolesByTeam(team?: Team|null): UseQueryResult<Role[]> {
   return useQuery({
     queryKey: ["roles", "team", team],
-    enabled: team !== undefined,
+    enabled: team !== undefined && team !== null,
     queryFn: async () => await getRolesByTeam(team),
   });
 }

@@ -2,6 +2,8 @@ import typia from "typia";
 import Permission from "../types/Permission";
 import Role from "../types/Role";
 import Team from "../types/Team";
+import { rolesData } from "../data/roles";
+import { permissionsData } from "../data/permissions";
 
 const delayMS = 1000;
 
@@ -12,7 +14,8 @@ function delay(ms: number): Promise<void> {
 function getRolesFromLocalStorage(): Role[] {
   const data = localStorage.getItem("roles");
   if (data === null) {
-    return [];
+    localStorage.setItem("roles", typia.json.assertStringify<Role[]>(rolesData));
+    return rolesData;
   }
 
   const roles: Role[] = [];
@@ -39,7 +42,7 @@ export async function getRoles(): Promise<Role[]> {
   return rolesDataPromise;
 }
 
-export async function getRolesByTeam(team?: Team): Promise<Role[]> {
+export async function getRolesByTeam(team?: Team|null): Promise<Role[]> {
   const roles = getRolesFromLocalStorage();
   const rolesDataPromise = Promise.resolve(roles.filter((role) => Boolean(team) && role.team === team));
   const sleepPromise = delay(delayMS);
@@ -68,7 +71,8 @@ export async function assignEmployeeToRole(roleID: string, employeeID: string): 
 function getPermissionsFromLocalStorage(): Permission[] {
   const data = localStorage.getItem("permissions");
   if (data === null) {
-    return [];
+    localStorage.setItem("permissions", typia.json.assertStringify<Permission[]>(permissionsData));
+    return permissionsData;
   }
 
   const permissions: Permission[] = [];
@@ -109,6 +113,7 @@ export async function assignRoleToPermission(permissionID: string, role: Role): 
   const index = permissions.findIndex((p) => p.id === permissionID);
   const foundPermission = permissions[index];
   foundPermission.assignRole(role);
+  permissions[index] = foundPermission;
   localStorage.setItem("permissions", typia.json.assertStringify(permissions));
   await delay(delayMS);
 }

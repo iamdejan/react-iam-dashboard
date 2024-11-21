@@ -15,7 +15,9 @@ export default class Role {
   }
 
   public static fromTypiaPrimitive(other: Primitive<Role>): Role {
-    return new Role(other.id, other.team, other.position);
+    const role = new Role(other.id, other.team, other.position);
+    role.employees = other.employees;
+    return role;
   }
 
   public assignEmployee(employeeID: string): void {

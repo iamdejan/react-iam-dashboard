@@ -29,7 +29,7 @@ export function useAssignEmployeeToRole(roleID: string): UseMutationResult<void,
     },
     onSettled: async () => {
       await queryClient.invalidateQueries({
-        queryKey: ["roles"],
+        queryKey: ["roles", roleID],
       });
     }
   });
@@ -61,7 +61,11 @@ export function useAssignRoleToPermission(permissionID: string): UseMutationResu
     },
     onSettled: async () => {
       await queryClient.invalidateQueries({
-        queryKey: ["permissions"],
+        queryKey: ["permissions", permissionID],
+      });
+
+      await queryClient.invalidateQueries({
+        queryKey: ["roles"],
       });
     }
   });
