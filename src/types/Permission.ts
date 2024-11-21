@@ -1,3 +1,4 @@
+import { Primitive } from "typia";
 import Role from "./Role";
 import Team from "./Team";
 
@@ -16,11 +17,17 @@ export default class Permission {
     this.roles = [];
   }
 
+  public static fromTypiaPrimitive(other: Primitive<Permission>): Permission {
+    const permission = new Permission(other.id, other.team, other.entity, other.action);
+    permission.roles = other.roles.map((role) => Role.fromTypiaPrimitive(role));
+    return permission;
+  }
+
   public toString(): string {
     return `${this.team.toString().toLowerCase()}.${this.entity.toLowerCase()}.${this.action.toLowerCase()}`;
   }
 
   public assignRole(role: Role): void {
-    this.roles = [...this.roles, role];
+    this.roles.push(role);
   }
 };

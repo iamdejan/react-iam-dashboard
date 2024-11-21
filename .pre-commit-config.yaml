@@ -22,7 +22,7 @@ repos:
       - id: install-pnpm
         name: Install pnpm
         language: system
-        entry: npm i -g pnpm@9.12.3
+        entry: npm i -g pnpm@9.13.2
         pass_filenames: false
       - id: install-dependencies
         name: Install dependencies
