@@ -1,6 +1,7 @@
 import { AppShell, Box, Title, useMantineTheme } from "@mantine/core";
 import { FileRoutesByPath, Link, Outlet } from "@tanstack/react-router";
-import { IconBriefcase, IconUsers } from "@tabler/icons-react";
+import { BiBriefcase } from "react-icons/bi";
+import { FiUsers } from "react-icons/fi";
 import { JSX, lazy } from "react";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import SidebarLink from "../SidebarLink";
@@ -24,12 +25,12 @@ const routeList: RouteLink[] = [
   {
     link: "/role-management",
     title: "Role Management",
-    icon: <IconUsers />,
+    icon: <FiUsers />,
   },
   {
     link: "/permission-management",
     title: "Permission Management",
-    icon: <IconBriefcase />,
+    icon: <BiBriefcase />,
   },
 ];
 

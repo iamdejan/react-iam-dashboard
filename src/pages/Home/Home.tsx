@@ -1,5 +1,8 @@
 import { Box, Paper, SimpleGrid, Title } from "@mantine/core";
-import { IconBolt, IconCoinOff, IconLock, IconTie } from "@tabler/icons-react";
+import { MdBolt } from "react-icons/md";
+import { MdLockOutline } from "react-icons/md";
+import { TbCoinOff } from "react-icons/tb";
+import { TbTie } from "react-icons/tb";
 import { JSX } from "react";
 
 type LandingPaper = {
@@ -12,22 +15,22 @@ const landingPaperItems: LandingPaper[] = [
   {
     title: "Secure",
     text: "No one can access unintended permissions.",
-    icon: <IconLock />,
+    icon: <MdLockOutline />,
   },
   {
     title: "Blazingly Fast",
     text: "You don't need to wait for hours or even minutes for the configuration to be applied.",
-    icon: <IconBolt />,
+    icon: <MdBolt />,
   },
   {
     title: "Save Your Cost",
     text: "As easy as you can imagine. You don't need to hire a professional to manage your Identity Access and Management.",
-    icon: <IconCoinOff />,
+    icon: <TbCoinOff />,
   },
   {
     title: "Professional Support",
     text: "Got any problem? We have a professional team that will help you to solve your problem.",
-    icon: <IconTie />,
+    icon: <TbTie />,
   }
 ];
 
