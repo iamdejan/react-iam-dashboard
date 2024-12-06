@@ -2,14 +2,13 @@
 import { FirebaseApp, FirebaseOptions, initializeApp } from "firebase/app";
 import { Firestore, getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
 const firebaseConfig: FirebaseOptions = {
-  apiKey: "AIzaSyAoLyRV_WwSRCuTdmzZeKUQy-QhUdRXsRg",
-  authDomain: "react-iam-dashboard.firebaseapp.com",
-  projectId: "react-iam-dashboard",
-  storageBucket: "react-iam-dashboard.firebasestorage.app",
-  messagingSenderId: "686008234967",
-  appId: "1:686008234967:web:9b1205701d5b21e3745192"
+  apiKey: String(import.meta.env.VITE_APP_FIREBASE_API_KEY),
+  authDomain: String(import.meta.env.VITE_APP_FIREBASE_AUTH_DOMAIN),
+  projectId: String(import.meta.env.VITE_APP_FIREBASE_PROJECT_ID),
+  storageBucket: String(import.meta.env.VITE_APP_FIREBASE_STORAGE_BUCKET),
+  messagingSenderId: String(import.meta.env.VITE_APP_FIREBASE_MESSAGING_SENDER_ID),
+  appId: String(import.meta.env.VITE_APP_FIREBASE_APP_ID)
 };
 
 // Initialize Firebase
