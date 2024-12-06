@@ -57,7 +57,7 @@ export function useAssignRoleToPermission(permissionID: string): UseMutationResu
   return useMutation({
     mutationFn: async (role: Role) => await assignRoleToPermission(permissionID, role),
     onError: (error) => {
-      console.error("error on assigning employee to role", error);
+      console.error("error on assigning role to permission", error);
     },
     onSettled: async () => {
       await queryClient.invalidateQueries({

@@ -1,6 +1,7 @@
 import { Primitive } from "typia";
-import Role from "./Role";
+import Role, { roleConverter } from "./Role";
 import Team from "./Team";
+import { PartialWithFieldValue, QueryDocumentSnapshot, SnapshotOptions, WithFieldValue } from "firebase/firestore";
 
 export default class Permission {
   public readonly id: string;
@@ -29,5 +30,22 @@ export default class Permission {
 
   public assignRole(role: Role): void {
     this.roles.push(role);
+  }
+};
+
+export const permissionConverter = {
+  toFirestore: (permission: Permission): PartialWithFieldValue<Permission> => {
+    return {
+      id: permission.id,
+      team: permission.team,
+      entity: permission.entity,
+      action: permission.action,
+      roles: permission.roles.map((role) => roleConverter.toFirestore(role)),
+    };
+  },
+  fromFirestore: (snapshot: QueryDocumentSnapshot<Permission, WithFieldValue<Permission>>, options?: SnapshotOptions): Permission => {
+    const data = snapshot.data(options);
+    const permission = new Permission(data.id, data.team, data.entity, data.action);
+    return permission;
   }
 };
