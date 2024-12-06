@@ -90,12 +90,12 @@ export async function getPermission(id: string): Promise<Permission | undefined>
   }
 }
 
-export async function assignRoleToPermission(permissionID: string, role: Role): Promise<void> {
+export async function assignRoleToPermission(permissionID: string, roleID: string): Promise<void> {
   const permission = await getPermission(permissionID);
   if (permission === undefined) {
     throw new Error("Permission not found");
   }
-  permission.assignRole(role);
+  permission.assignRole(roleID);
 
   const d = doc(db, "permissions", permissionID).withConverter(permissionConverter);
   await setDoc(d, permission);

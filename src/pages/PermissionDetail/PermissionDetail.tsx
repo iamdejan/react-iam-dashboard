@@ -11,7 +11,7 @@ export default function PermissionDetail(): JSX.Element {
   const { id } = route.useParams();
   const permissionQuery = usePermission(id);
   const rolesQuery = useRolesByTeam(permissionQuery.data?.team);
-  const [chosenRole, setChosenRole] = useState<Role|null>(null);
+  const [chosenRole, setChosenRole] = useState<Role | null>(null);
   const assignRoleToPermissionMutation = useAssignRoleToPermission(id);
 
   const roleRows = permissionQuery.data?.roles.map((role) => (
@@ -21,14 +21,14 @@ export default function PermissionDetail(): JSX.Element {
   ));
 
   function roleExistsInPermission(roleID: string): boolean {
-    if(permissionQuery.isLoading || permissionQuery.data === undefined) {
+    if (permissionQuery.isLoading || permissionQuery.data === undefined) {
       return false;
     }
 
-    return Boolean(permissionQuery.data.roles.find((role) => role.id === roleID));
+    return Boolean(permissionQuery.data.roles.find((permissionRoleID) => permissionRoleID === roleID));
   }
 
-  const employeeRows = (permissionQuery.isFetched && rolesQuery.isFetched? (rolesQuery.data ?? []) : [])
+  const employeeRows = (permissionQuery.isFetched && rolesQuery.isFetched ? (rolesQuery.data ?? []) : [])
     .filter((role) => roleExistsInPermission(role.id))
     .map((role) => role.employees.map((employeeID) => (
       <Table.Tr key={role.toString() + "|" + employeeID}>
@@ -37,19 +37,19 @@ export default function PermissionDetail(): JSX.Element {
       </Table.Tr>
     )));
 
-  function handleRoleSelectionChange(value: string|null): void {
-    if(value === null) {
+  function handleRoleSelectionChange(value: string | null): void {
+    if (value === null) {
       return;
     }
 
     const role = rolesQuery.data?.find((role) => role.toString() === value);
-    if(role) {
+    if (role) {
       setChosenRole(role);
     }
   }
 
   function handleAssignRoleToPermission(): void {
-    if(chosenRole !== null) {
+    if (chosenRole !== null) {
       assignRoleToPermissionMutation.mutate(chosenRole);
     }
   }

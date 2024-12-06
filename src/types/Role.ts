@@ -1,6 +1,5 @@
-import { Primitive } from "typia";
 import Team from "./Team";
-import { PartialWithFieldValue, QueryDocumentSnapshot, SnapshotOptions } from "firebase/firestore";
+import { PartialWithFieldValue, QueryDocumentSnapshot, SnapshotOptions, WithFieldValue } from "firebase/firestore";
 
 export default class Role {
   public readonly id: string;
@@ -13,12 +12,6 @@ export default class Role {
     this.id = id;
     this.team = team;
     this.position = position.toLowerCase();
-  }
-
-  public static fromTypiaPrimitive(other: Primitive<Role>): Role {
-    const role = new Role(other.id, other.team, other.position);
-    role.employees = other.employees;
-    return role;
   }
 
   public assignEmployee(employeeID: string): void {
@@ -39,7 +32,7 @@ export const roleConverter = {
       employees: role.employees,
     };
   },
-  fromFirestore: (snapshot: QueryDocumentSnapshot<Role, Role>, options?: SnapshotOptions): Role => {
+  fromFirestore: (snapshot: QueryDocumentSnapshot<Role, WithFieldValue<Role>>, options?: SnapshotOptions): Role => {
     const data = snapshot.data(options);
     const role = new Role(data.id, data.team, data.position);
     role.employees = data.employees;
