@@ -9,8 +9,7 @@ import theme from "./theme";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const router = createRouter({
-  routeTree,
-  defaultPreload: "intent"
+  routeTree
 });
 
 declare module "@tanstack/react-router" {

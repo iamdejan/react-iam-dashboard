@@ -44,3 +44,8 @@ repos:
         language: system
         entry: pnpm run vitest
         pass_filenames: false
+      - id: build
+        name: Build
+        language: system
+        entry: pnpm run build
+        pass_filenames: false
