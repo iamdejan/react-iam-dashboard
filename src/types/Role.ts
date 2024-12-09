@@ -1,5 +1,5 @@
 import Team from "./Team";
-import { PartialWithFieldValue, QueryDocumentSnapshot, SnapshotOptions, WithFieldValue } from "firebase/firestore";
+import { FirestoreDataConverter, PartialWithFieldValue, QueryDocumentSnapshot, SnapshotOptions } from "firebase/firestore";
 
 export default class Role {
   public readonly id: string;
@@ -23,7 +23,7 @@ export default class Role {
   }
 };
 
-export const roleConverter = {
+export const roleConverter: FirestoreDataConverter<Role, PartialWithFieldValue<Role>> = {
   toFirestore: (role: Role): PartialWithFieldValue<Role> => {
     return {
       id: role.id,
@@ -32,7 +32,7 @@ export const roleConverter = {
       employees: role.employees,
     };
   },
-  fromFirestore: (snapshot: QueryDocumentSnapshot<Role, WithFieldValue<Role>>, options?: SnapshotOptions): Role => {
+  fromFirestore: (snapshot: QueryDocumentSnapshot<Role, PartialWithFieldValue<Role>>, options?: SnapshotOptions): Role => {
     const data = snapshot.data(options);
     const role = new Role(data.id, data.team, data.position);
     role.employees = data.employees;

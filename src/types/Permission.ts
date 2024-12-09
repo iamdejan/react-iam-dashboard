@@ -1,5 +1,5 @@
 import Team from "./Team";
-import { PartialWithFieldValue, QueryDocumentSnapshot, SnapshotOptions, WithFieldValue } from "firebase/firestore";
+import { FirestoreDataConverter, PartialWithFieldValue, QueryDocumentSnapshot, SnapshotOptions } from "firebase/firestore";
 
 export default class Permission {
   public readonly id: string;
@@ -25,7 +25,7 @@ export default class Permission {
   }
 };
 
-export const permissionConverter = {
+export const permissionConverter: FirestoreDataConverter<Permission, PartialWithFieldValue<Permission>> = {
   toFirestore: (permission: Permission): PartialWithFieldValue<Permission> => {
     return {
       id: permission.id,
@@ -35,7 +35,7 @@ export const permissionConverter = {
       roles: permission.roles,
     };
   },
-  fromFirestore: (snapshot: QueryDocumentSnapshot<Permission, WithFieldValue<Permission>>, options?: SnapshotOptions): Permission => {
+  fromFirestore: (snapshot: QueryDocumentSnapshot<Permission, PartialWithFieldValue<Permission>>, options?: SnapshotOptions): Permission => {
     const data = snapshot.data(options);
     const permission = new Permission(data.id, data.team, data.entity, data.action);
     permission.roles = data.roles;
